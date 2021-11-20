@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My projects</title>
+</head>
+<style>
+  body{
+    background-color: #333;
+    color: #aaa
+  }
+  a{
+    color: #aaa;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  h1, h3{
+    text-align: center;
+  }
+  main{
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .projects-section{
+    margin: 10px;
+    background-color: rgba(0, 100, 0, 0.612);
+  }
+</style>
+<body>
+  <h1>Куда направимся?</h1>
+  <main>
+    <section class="projects-section">
+      <h3>Мои дитятки</h3>
+      <ul>
+        <li>
+          <a href="star-tunes">Star-Tunes</a>
+        </li>
+        <li>
+          <a href="A-star">A *</a>
+        </li>
+        <li>
+          <a href="twix">Твикс</a>
+        </li>
+      </ul>
+    </section>
+    <section class="projects-section">
+      <h3>RSS courses</h3>
+    </section>
+    <section class="projects-section">
+      <h3>Старые штуки</h3>
+    </section>
+  </main>
+</body>
+</html>
