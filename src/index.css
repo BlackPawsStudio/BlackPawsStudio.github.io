@@ -34,11 +34,11 @@ main {
 }
 
 a {
-  color: var(--main-color);
+  color: #fff;
 }
 
 a:visited{
-  color: var(--shade-color);
+  color: #aaa;
 }
 
 .button:hover {
