@@ -1,0 +1,177 @@
+.container {
+  background: linear-gradient(var(--shade-color), var(--main-darker-color));
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.button {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 15%;
+  height: 100vh;
+  background: none;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  background: transparent;
+}
+
+.button > div {
+  opacity: 0.25;
+  border-top: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-left: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
+
+.button:hover > div {
+  opacity: 1;
+}
+
+.button:active > div {
+  transform: scale(95%);
+}
+
+.button-l {
+  left: 0;
+}
+
+.button-l > div {
+  border-right: 50px solid var(--main-color);
+  border-left: 0;
+  transform: translateX(-45%);
+}
+
+.button-l:hover {
+  background: linear-gradient(-90deg, transparent, var(--main-color));
+}
+
+.button-l:hover > div {
+  transform: scale(110%) translateX(-45%);
+}
+
+.button-r {
+  right: 0;
+}
+
+.button-r > div {
+  border-left: 50px solid var(--main-color);
+  border-right: 0;
+  transform: translateX(45%);
+}
+
+.button-r:hover {
+  background: linear-gradient(90deg, transparent, var(--main-color));
+}
+
+.button-r:hover > div {
+  transform: scale(110%) translateX(45%);
+}
+
+.button-b {
+  bottom: 0;
+  width: 100vw;
+  height: 15%;
+}
+
+.button-b > div {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  width: 30px;
+  height: 0;
+  border-top: 50px solid var(--main-color);
+  transform: translateX(-50%);
+}
+
+.button-b:hover {
+  background: linear-gradient(180deg, transparent, var(--main-color));
+}
+
+.button-b:hover > div {
+  transform: scale(110%) translateX(-45%);
+}
+
+.light {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.light > div {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: red;
+  background: linear-gradient(
+    90deg,
+    transparent 5%,
+    var(--light-color) 20%,
+    transparent 35%,
+    var(--light-color) 50%,
+    transparent 65%,
+    var(--light-color) 80%,
+    transparent 95%
+  );
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: top;
+  /* transform: translateX(-50%) rotateX(30deg); */
+  animation: light-flow ease-in-out infinite 10s;
+}
+
+@keyframes light-flow {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(-25%) scaleY(200%) rotateX(30deg) rotateZ(-10deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-25%) scaleY(200%) rotateX(30deg) rotateZ(10deg);
+  }
+}
+
+.prism-container {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 0 0 25px #000;
+}
+
+.project-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.transition-leave {
+  transition: all .5s;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-color);
+}
