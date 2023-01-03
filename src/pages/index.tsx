@@ -13,7 +13,7 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsTransition(false);
-    }, 500);
+    }, 1000);
   }, []);
 
   const [slide, setSlide] = useState(0);
@@ -21,10 +21,10 @@ const HomePage = () => {
   const [clientHeight, setClientHeight] = useState(document.body.clientHeight);
 
   useEffect(() => {
-    window.onload = () => {
+    setTimeout(() => {
       setClientWidth(document.body.clientWidth);
       setClientHeight(document.body.clientHeight);
-    };
+    }, 500)
     window.onresize = () => {
       setClientWidth(document.body.clientWidth);
       setClientHeight(document.body.clientHeight);

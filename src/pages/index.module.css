@@ -22,7 +22,7 @@
 }
 
 .button > div {
-  opacity: 0.25;
+  /* opacity: 0.25; */
   border-top: 25px solid transparent;
   border-right: 25px solid transparent;
   border-left: 25px solid transparent;
@@ -42,6 +42,7 @@
 }
 
 .button-l > div {
+  filter: brightness(120%);
   border-right: 50px solid var(--main-color);
   border-left: 0;
   transform: translateX(-45%);
@@ -60,6 +61,7 @@
 }
 
 .button-r > div {
+  filter: brightness(120%);
   border-left: 50px solid var(--main-color);
   border-right: 0;
   transform: translateX(45%);
@@ -80,6 +82,7 @@
 }
 
 .button-b > div {
+  filter: brightness(120%);
   position: absolute;
   left: 50%;
   bottom: 10%;
@@ -174,4 +177,5 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--main-color);
+  z-index: 20;
 }
