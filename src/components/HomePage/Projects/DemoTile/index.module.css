@@ -9,8 +9,20 @@
   color: #fff;
 }
 
+@media (max-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+}
+
 .shade {
-  background: linear-gradient(90deg, var(--shade-color) 0%, transparent 15%, transparent 85%, var(--shade-color) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--shade-color) 0%,
+    transparent 15%,
+    transparent 85%,
+    var(--shade-color) 100%
+  );
   position: absolute;
   left: 0;
   top: 0;

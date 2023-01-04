@@ -15,3 +15,9 @@
 .info {
   margin-top: 60px;
 }
+
+@media (max-width: 1100px) {
+  .container {
+    transform: rotateY(0deg);
+  }
+}

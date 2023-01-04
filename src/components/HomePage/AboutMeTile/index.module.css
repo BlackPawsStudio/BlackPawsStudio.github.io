@@ -39,12 +39,27 @@
   margin: auto;
 }
 
+@media (max-width: 1100px) {
+  .content-wrapper {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .ul {
+    list-style: none;
+  }
+}
+
 .ul > li {
   text-align: start;
   word-wrap:normal;
   margin-bottom: 15px;
 }
 
+.ul > li > div > a {
+  font-size: 18px!important;
+  padding: 10px 0;
+}
+w
 .section-heading {
   display: inline;
   font-size: 30px;
@@ -53,4 +68,21 @@
   border-radius: 10px;
   padding: 0 15px;
   color: #fff;
+}
+
+.link-wrapper {
+  font-size: 30px;
+  padding: 0 15px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--main-color), transparent);
+}
+
+@media (max-width: 1100px) {
+  .link-wrapper {
+    font-size: 24px;
+  }
+  
+  .container {
+    transform: rotateY(0deg);
+  }
 }

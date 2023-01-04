@@ -1,3 +1,4 @@
+import 'swiper/css';
 import { useEffect, useState } from 'react';
 import AboutMeTile from '../components/HomePage/AboutMeTile';
 import Projects from '../components/HomePage/Projects';
@@ -6,6 +7,9 @@ import WelcomeTile from '../components/HomePage/WelcomeTile';
 import ParticlesComponent from '../components/Particles';
 import Prism from '../components/Prism';
 import styles from './index.module.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+const isDesktop = document.body.clientWidth > 1100;
 
 const HomePage = () => {
   const [isTransition, setIsTransition] = useState(true);
@@ -24,14 +28,16 @@ const HomePage = () => {
     setTimeout(() => {
       setClientWidth(document.body.clientWidth);
       setClientHeight(document.body.clientHeight);
-    }, 500)
-    window.onresize = () => {
-      setClientWidth(document.body.clientWidth);
-      setClientHeight(document.body.clientHeight);
-    };
+    }, 500);
+    if (isDesktop) {
+      window.onresize = () => {
+        setClientWidth(document.body.clientWidth);
+        setClientHeight(document.body.clientHeight);
+      };
+    }
   }, []);
 
-  return (
+  return isDesktop ? (
     <div
       className={styles['container']}
       style={{
@@ -90,6 +96,37 @@ const HomePage = () => {
           visibility: isTransition ? 'visible' : 'hidden',
         }}
       />
+    </div>
+  ) : (
+    <div className={styles['container']}>
+      <div
+        className={styles['light']}
+        style={{
+          perspective: `${clientWidth / 3}px`,
+        }}
+      >
+        <div />
+      </div>
+      <ParticlesComponent />
+      <div className={styles['swiper-container']}>
+        <Swiper slidesPerView={1} spaceBetween={30} loop={true}>
+          <SwiperSlide>
+            <WelcomeTile />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <AboutMeTile />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <ProjectsGallery setIsTransition={setIsTransition} />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <Projects />
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   );
 };

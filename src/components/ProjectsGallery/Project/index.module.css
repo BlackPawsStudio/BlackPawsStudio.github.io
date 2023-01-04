@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transform: rotateY(180deg),
 }
 
 .side-placeholder {
@@ -16,4 +17,10 @@
   font-size: 48px;
   border-radius: 30px;
   background: linear-gradient(#00a3a3, var(--main-darker-color));
+}
+
+@media (max-width: 1100px) {
+  .container {
+    transform: rotateY(0deg);
+  }
 }

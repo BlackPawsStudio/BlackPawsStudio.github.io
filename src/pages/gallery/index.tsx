@@ -1,3 +1,4 @@
+import 'swiper/css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ParticlesComponent from '../../components/Particles';
@@ -9,6 +10,7 @@ import ProjectTitleSide from '../../components/ProjectsGallery/Project/Title';
 import WelcomeTile from '../../components/ProjectsGallery/Welcome';
 import { demos } from '../../utils/data';
 import styles from '../index.module.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const projectsArr = Object.values(demos)
   .flat()
@@ -17,6 +19,8 @@ const projectsArr = Object.values(demos)
     return el;
   })
   .reverse();
+
+const isDesktop = document.body.clientWidth > 1100;
 
 const GalleryPage = () => {
   const [slide, setSlide] = useState(0);
@@ -73,7 +77,7 @@ const GalleryPage = () => {
       setIsTransition(true);
       setTimeout(() => {
         navigate('/');
-      }, 500)
+      }, 500);
     }
   };
 
@@ -85,7 +89,7 @@ const GalleryPage = () => {
 
   console.log(currentProject);
 
-  return (
+  return isDesktop ? (
     <div
       className={styles['container']}
       style={{
@@ -193,6 +197,52 @@ const GalleryPage = () => {
           visibility: isTransition ? 'visible' : 'hidden',
         }}
       />
+    </div>
+  ) : (
+    <div className={styles['container']}>
+      <div
+        className={styles['light']}
+        style={{
+          perspective: `${clientWidth / 3}px`,
+        }}
+      >
+        <div />
+      </div>
+      <ParticlesComponent />
+      <div className={styles['swiper-container']}>
+        <Swiper slidesPerView={1} spaceBetween={30} loop={true}>
+          <SwiperSlide>
+            <WelcomeTile />
+          </SwiperSlide>
+          {Object.values(demos)
+            .flat()
+            .map((el, id) => {
+              el.id = id;
+              return el;
+            })
+            .map((el, _, arr) => (
+              <SwiperSlide>
+                <Project
+                  zoom={() => {
+                    if (
+                      el.id ===
+                      (slide > 0
+                        ? (slide % (arr.length + 1)) - 1
+                        : arr.length - (Math.abs(slide) % (arr.length + 1)))
+                    ) {
+                      setIsZoomed(!isZoomed);
+                      console.log(projectsArr.length - el.id - 1);
+
+                      setCurrentProject(projectsArr.length - el.id - 1);
+                    }
+                  }}
+                  isZoomed={isZoomed}
+                  data={el}
+                />
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
     </div>
   );
 };

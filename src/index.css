@@ -37,10 +37,6 @@ a {
   color: #fff;
 }
 
-a:visited{
-  color: #aaa;
-}
-
 .button:hover {
   cursor: pointer;
   transform: scale(105%);

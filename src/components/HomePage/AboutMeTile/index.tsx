@@ -18,30 +18,38 @@ const AboutMeTile = () => (
             <h2>About me:</h2>
           </HoloFrame>
           <p>
-            I am Artemiy Bal, {myAge} years old. <br/> I am a typescript React developer with some good
-            knowledge in Node.js libraries Express and Socket.io.<br/> I also know how to work with
-            Next.js, Redux, Zustand and many other libruaries.<br/> Programming for me is not only work
-            but a great hobby.
+            I am Artemiy Bal, {myAge} years old. <br /> I am a typescript React developer with some
+            good knowledge in Node.js libraries Express and Socket.io.
+            <br /> I also know how to work with Next.js, Redux, Zustand and many other libruaries.
+            <br /> Programming for me is not only work but a great hobby.
           </p>
           <h4>My skills:</h4>
           <ul className={styles['ul']}>
             <li>
-              <p className={styles['section-heading']}>Frontend:</p>
+              <div className={styles['link-wrapper']}>
+                <p>Frontend:</p>
+              </div>
               <p>
                 JavaScript, TypeScript, React, Next.js, Redux, Zustand, CSS3 (Sass), HTML5 (Flexbox,
                 Grid), Tailwind, Bootstrap, npm, Figma, Semantic UI, Pixel-Perfect
               </p>
             </li>
             <li>
-              <p className={styles['section-heading']}>Backend:</p>
+              <div className={styles['link-wrapper']}>
+                <p>Backend:</p>
+              </div>
               <p>Next.js, Node.js, Express, Socket.io, Flask</p>
             </li>
             <li>
-              <p className={styles['section-heading']}>Databases:</p>
+              <div className={styles['link-wrapper']}>
+                <p>Databases:</p>
+              </div>
               <p>MySQL, Firebase, MongoDB</p>
             </li>
             <li>
-              <p className={styles['section-heading']}>Methodologies and tools:</p>
+              <div className={styles['link-wrapper']}>
+                <p>Methodologies and tools:</p>
+              </div>
               <p>Git (GitHub)</p>
             </li>
             <li>
@@ -65,9 +73,9 @@ const AboutMeTile = () => (
           <ul className={styles['ul']}>
             {certificates.map((el, id) => (
               <li key={id}>
-                <a href={el.url} className={styles['section-heading']}>
-                  {el.name}
-                </a>
+                <div className={styles['link-wrapper']}>
+                  <a href={el.url}>{el.name}</a>
+                </div>
               </li>
             ))}
           </ul>

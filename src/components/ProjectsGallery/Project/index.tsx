@@ -10,17 +10,13 @@ interface ProjectProps {
 
 const Project = ({ data, zoom, isZoomed }: ProjectProps) => {
   return (
-    <div
-      className={styles['container']}
-      style={{
-        perspective: `500px`,
-        transform: 'rotateY(180deg)',
-      }}
-      onClick={zoom}
-    >
-      <div className={styles['side-placeholder']} style={{
-        opacity: isZoomed ? 0 : 1
-      }}>
+    <div className={styles['container']} onClick={zoom}>
+      <div
+        className={`button ${styles['side-placeholder']}`}
+        style={{
+          opacity: isZoomed ? 0 : 1,
+        }}
+      >
         <HoloFrame
           light
           style={{

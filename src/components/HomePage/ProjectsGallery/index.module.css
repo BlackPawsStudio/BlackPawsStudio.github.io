@@ -15,11 +15,17 @@
 .redirect {
   width: 100%;
   min-height: 300px;
- }
+}
 
 .title {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    transform: rotateY(0deg);
+  }
 }
