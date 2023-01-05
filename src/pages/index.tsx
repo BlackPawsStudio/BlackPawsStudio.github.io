@@ -1,5 +1,6 @@
 import 'swiper/css';
-import { useEffect, useState } from 'react';
+import 'swiper/css/navigation';
+import { useEffect, useRef, useState } from 'react';
 import AboutMeTile from '../components/HomePage/AboutMeTile';
 import Projects from '../components/HomePage/Projects';
 import ProjectsGallery from '../components/HomePage/ProjectsGallery';
@@ -8,11 +9,15 @@ import ParticlesComponent from '../components/Particles';
 import Prism from '../components/Prism';
 import styles from './index.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 const isDesktop = document.body.clientWidth > 1100;
 
 const HomePage = () => {
   const [isTransition, setIsTransition] = useState(true);
+
+  const lButton = useRef(null);
+  const rButton = useRef(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -108,8 +113,31 @@ const HomePage = () => {
         <div />
       </div>
       <ParticlesComponent />
+      <button
+        className={styles['button'] + ' ' + styles['button-l']}
+        onClick={() => setSlide(slide - 1)}
+        ref={lButton}
+      >
+        <div />
+      </button>
+      <button
+        className={styles['button'] + ' ' + styles['button-r']}
+        onClick={() => setSlide(slide + 1)}
+        ref={rButton}
+      >
+        <div />
+      </button>
       <div className={styles['swiper-container']}>
-        <Swiper slidesPerView={1} spaceBetween={30} loop={true}>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          modules={[Navigation]}
+          navigation={{
+            prevEl: lButton.current,
+            nextEl: rButton.current,
+          }}
+        >
           <SwiperSlide>
             <WelcomeTile />
           </SwiperSlide>
@@ -127,6 +155,13 @@ const HomePage = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+      <div
+        className={styles['transition-leave']}
+        style={{
+          opacity: isTransition ? '1' : '0',
+          visibility: isTransition ? 'visible' : 'hidden',
+        }}
+      />
     </div>
   );
 };

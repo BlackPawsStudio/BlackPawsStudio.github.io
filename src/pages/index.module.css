@@ -14,10 +14,8 @@
   z-index: 2;
   width: 15%;
   height: 100vh;
-  background: none;
   cursor: pointer;
   border: none;
-  text-align: center;
   background: transparent;
 }
 
@@ -34,6 +32,7 @@
 }
 
 .button:active > div {
+  filter: brightness(120%);
   transform: scale(95%);
 }
 
@@ -41,8 +40,8 @@
   left: 0;
 }
 
+.button-l-div,
 .button-l > div {
-  filter: brightness(120%);
   border-right: 50px solid var(--main-color);
   border-left: 0;
   transform: translateX(-45%);
@@ -60,8 +59,8 @@
   right: 0;
 }
 
+.button-r-div,
 .button-r > div {
-  filter: brightness(120%);
   border-left: 50px solid var(--main-color);
   border-right: 0;
   transform: translateX(45%);
@@ -78,18 +77,20 @@
 .button-b {
   bottom: 0;
   width: 100vw;
-  height: 15%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
 }
 
 .button-b > div {
-  filter: brightness(120%);
-  position: absolute;
   left: 50%;
   bottom: 10%;
-  width: 30px;
+  width: 50px;
   height: 0;
   border-top: 50px solid var(--main-color);
   transform: translateX(-50%);
+  margin-left: 25px;
+  margin-right: -25px;
 }
 
 .button-b:hover {
@@ -135,6 +136,14 @@
   .light > div {
     opacity: 0.4;
     animation: light-flow-mobile ease-in-out infinite 20s;
+  }
+  .button {
+    background: none !important;
+  }
+  .button-l,
+  .button-r {
+    height: 10% !important;
+    margin: auto 30px 0 30px;
   }
 }
 

@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transform: rotateY(180deg),
+  transform: rotateY(180deg);
 }
 
 .side-placeholder {
@@ -21,6 +21,12 @@
 
 @media (max-width: 1100px) {
   .container {
+    padding: 10% 0;
+    height: 100%;
     transform: rotateY(0deg);
+  }
+  .side-placeholder {
+    background: none;
+    font-size: 24px;
   }
 }

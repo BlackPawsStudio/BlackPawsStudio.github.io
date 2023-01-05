@@ -1,5 +1,5 @@
 import 'swiper/css';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ParticlesComponent from '../../components/Particles';
 import Prism from '../../components/Prism';
@@ -11,6 +11,7 @@ import WelcomeTile from '../../components/ProjectsGallery/Welcome';
 import { demos } from '../../utils/data';
 import styles from '../index.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 const projectsArr = Object.values(demos)
   .flat()
@@ -36,6 +37,9 @@ const GalleryPage = () => {
   const navigate = useNavigate();
 
   const [isTransition, setIsTransition] = useState(true);
+
+  const lButton = useRef(null);
+  const rButton = useRef(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -71,6 +75,7 @@ const GalleryPage = () => {
   };
 
   const backButtonClick = () => {
+    setCurrentProject(0);
     if (isZoomed) {
       setIsZoomed(false);
     } else {
@@ -151,8 +156,6 @@ const GalleryPage = () => {
                       : arr.length - (Math.abs(slide) % (arr.length + 1)))
                   ) {
                     setIsZoomed(!isZoomed);
-                    console.log(projectsArr.length - el.id - 1);
-
                     setCurrentProject(projectsArr.length - el.id - 1);
                   }
                 }}
@@ -208,9 +211,51 @@ const GalleryPage = () => {
       >
         <div />
       </div>
+      <h2
+        className={styles['page-title']}
+        style={{
+          opacity: isZoomed ? '0' : '1',
+        }}
+      >
+        PROJECTS GALLERY
+      </h2>
+      <button className={styles['button'] + ' ' + styles['button-b']} onClick={backButtonClick}>
+        <div />
+      </button>
+      <button
+        className={styles['button'] + ' ' + styles['button-l']}
+        ref={lButton}
+        onClick={leftButtonClick}
+      >
+        <div />
+      </button>
+      <button
+        className={styles['button'] + ' ' + styles['button-r']}
+        ref={rButton}
+        onClick={rightButtonClick}
+      >
+        <div />
+      </button>
       <ParticlesComponent />
       <div className={styles['swiper-container']}>
-        <Swiper slidesPerView={1} spaceBetween={30} loop={true}>
+        <Swiper
+          style={{
+            display: isZoomed ? 'none' : 'block',
+          }}
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          modules={[Navigation]}
+          navigation={{
+            prevEl: lButton.current,
+            nextEl: rButton.current,
+          }}
+          onSlideChange={(swiper) => {
+            if (!isZoomed) {
+              setCurrentProject(swiper.realIndex - 1);
+            }
+          }}
+        >
           <SwiperSlide>
             <WelcomeTile />
           </SwiperSlide>
@@ -220,21 +265,11 @@ const GalleryPage = () => {
               el.id = id;
               return el;
             })
-            .map((el, _, arr) => (
-              <SwiperSlide>
+            .map((el, id, arr) => (
+              <SwiperSlide key={id}>
                 <Project
                   zoom={() => {
-                    if (
-                      el.id ===
-                      (slide > 0
-                        ? (slide % (arr.length + 1)) - 1
-                        : arr.length - (Math.abs(slide) % (arr.length + 1)))
-                    ) {
-                      setIsZoomed(!isZoomed);
-                      console.log(projectsArr.length - el.id - 1);
-
-                      setCurrentProject(projectsArr.length - el.id - 1);
-                    }
+                    setIsZoomed(!isZoomed);
                   }}
                   isZoomed={isZoomed}
                   data={el}
@@ -242,7 +277,46 @@ const GalleryPage = () => {
               </SwiperSlide>
             ))}
         </Swiper>
+        <Swiper
+          style={{
+            display: !isZoomed ? 'none' : 'block',
+          }}
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          modules={[Navigation]}
+          navigation={{
+            prevEl: lButton.current,
+            nextEl: rButton.current,
+          }}
+          onSlideChange={(swiper) => {
+            setCurrentProject(swiper.realIndex);
+          }}
+        >
+          <SwiperSlide>
+            <ProjectTitleSide
+              title={projectsArr[currentProject].name}
+              image={projectsArr[currentProject].image}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectDescription text={projectsArr[currentProject].description} />,
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectDemo
+              link={projectsArr[currentProject].url}
+              image={projectsArr[currentProject].image}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
+      <div
+        className={styles['transition-leave']}
+        style={{
+          opacity: isTransition ? '1' : '0',
+          visibility: isTransition ? 'visible' : 'hidden',
+        }}
+      />
     </div>
   );
 };
