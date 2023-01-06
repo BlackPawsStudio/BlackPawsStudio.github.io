@@ -65,3 +65,17 @@ ol {
 .content > hr {
   width: 100%;
 }
+
+.url-container {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    padding: 5% 0;
+  }
+  
+  .url-container {
+    display: block;
+  }
+}

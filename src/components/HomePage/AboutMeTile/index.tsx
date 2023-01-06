@@ -20,7 +20,7 @@ const AboutMeTile = () => (
           <p>
             I am Artemiy Bal, {myAge} years old. <br /> I am a typescript React developer with some
             good knowledge in Node.js libraries Express and Socket.io.
-            <br /> I also know how to work with Next.js, Redux, Zustand and many other libruaries.
+            <br /> I also know how to work with Next.js, Redux, Zustand and many other libraries.
             <br /> Programming for me is not only work but a great hobby.
           </p>
           <h4>My skills:</h4>
@@ -53,7 +53,9 @@ const AboutMeTile = () => (
               <p>Git (GitHub)</p>
             </li>
             <li>
-              <p className={styles['section-heading']}>Hosting:</p>
+              <div className={styles['link-wrapper']}>
+                <p>Hosting:</p>
+              </div>
               <p>Github pages, Heroku, Netlify, Railway</p>
             </li>
           </ul>

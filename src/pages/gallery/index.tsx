@@ -184,7 +184,7 @@ const GalleryPage = () => {
                 title={projectsArr[currentProject].name}
                 image={projectsArr[currentProject].image}
               />,
-              <ProjectDescription text={projectsArr[currentProject].description} />,
+              <ProjectDescription data={projectsArr[currentProject]} />,
               <ProjectDemo
                 link={projectsArr[currentProject].url}
                 image={projectsArr[currentProject].image}
@@ -237,11 +237,13 @@ const GalleryPage = () => {
         <div />
       </button>
       <ParticlesComponent />
-      <div className={styles['swiper-container']}>
+      <div
+        className={styles['swiper-container']}
+        style={{
+          display: isZoomed ? 'none' : 'flex',
+        }}
+      >
         <Swiper
-          style={{
-            display: isZoomed ? 'none' : 'block',
-          }}
           slidesPerView={1}
           spaceBetween={30}
           loop={true}
@@ -251,8 +253,10 @@ const GalleryPage = () => {
             nextEl: rButton.current,
           }}
           onSlideChange={(swiper) => {
-            if (!isZoomed) {
-              setCurrentProject(swiper.realIndex - 1);
+            if (!isZoomed && swiper.realIndex - 1 >= 0) {
+              console.log('ind', swiper.realIndex);
+              
+              setCurrentProject(projectsArr.length - swiper.realIndex);
             }
           }}
         >
@@ -265,7 +269,7 @@ const GalleryPage = () => {
               el.id = id;
               return el;
             })
-            .map((el, id, arr) => (
+            .map((el, id) => (
               <SwiperSlide key={id}>
                 <Project
                   zoom={() => {
@@ -277,39 +281,8 @@ const GalleryPage = () => {
               </SwiperSlide>
             ))}
         </Swiper>
-        <Swiper
-          style={{
-            display: !isZoomed ? 'none' : 'block',
-          }}
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          modules={[Navigation]}
-          navigation={{
-            prevEl: lButton.current,
-            nextEl: rButton.current,
-          }}
-          onSlideChange={(swiper) => {
-            setCurrentProject(swiper.realIndex);
-          }}
-        >
-          <SwiperSlide>
-            <ProjectTitleSide
-              title={projectsArr[currentProject].name}
-              image={projectsArr[currentProject].image}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProjectDescription text={projectsArr[currentProject].description} />,
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProjectDemo
-              link={projectsArr[currentProject].url}
-              image={projectsArr[currentProject].image}
-            />
-          </SwiperSlide>
-        </Swiper>
       </div>
+      {isZoomed && <ProjectDescription data={projectsArr[currentProject]} />}
       <div
         className={styles['transition-leave']}
         style={{

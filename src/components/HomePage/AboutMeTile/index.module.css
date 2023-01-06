@@ -29,6 +29,7 @@
   font-size: 36px;
   margin: 0;
   border-bottom: 3px solid var(--main-color);
+  padding: 15px 0;
   background: linear-gradient(0deg, var(--main-color), transparent);
 }
 
@@ -37,15 +38,13 @@
   max-width: 70%;
   width: max-content;
   margin: auto;
+  list-style: none;
 }
 
 @media (max-width: 1100px) {
   .content-wrapper {
     overflow-x: hidden;
     overflow-y: auto;
-  }
-  .ul {
-    list-style: none;
   }
 }
 
@@ -66,13 +65,13 @@ w
   font-weight: bold;
   background: linear-gradient(90deg, var(--main-color), transparent);
   border-radius: 10px;
-  padding: 0 15px;
+  padding: 5px 15px;
   color: #fff;
 }
 
 .link-wrapper {
   font-size: 30px;
-  padding: 0 15px;
+  padding: 5px 15px;
   border-radius: 10px;
   background: linear-gradient(90deg, var(--main-color), transparent);
 }

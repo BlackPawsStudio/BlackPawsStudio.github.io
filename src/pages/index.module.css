@@ -47,6 +47,10 @@
   transform: translateX(-45%);
 }
 
+.dark-button-l > div {
+  border-right: 50px solid var(--shade-color);
+}
+
 .button-l:hover {
   background: linear-gradient(-90deg, transparent, var(--main-color));
 }
@@ -64,6 +68,10 @@
   border-left: 50px solid var(--main-color);
   border-right: 0;
   transform: translateX(45%);
+}
+
+.dark-button-r > div {
+  border-left: 50px solid var(--shade-color);
 }
 
 .button-r:hover {
@@ -92,6 +100,10 @@
   margin-left: 25px;
   margin-right: -25px;
 }
+
+.darker-button-b > div {
+  border-top: 50px solid var(--shade-color);
+} 
 
 .button-b:hover {
   background: linear-gradient(180deg, transparent, var(--main-color));

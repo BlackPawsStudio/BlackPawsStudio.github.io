@@ -24,9 +24,11 @@ const Project = ({ data, zoom, isZoomed }: ProjectProps) => {
             height: '100%',
             padding: '5px',
             textAlign: 'center',
+            overflow: 'hidden'
           }}
         >
-          <h4>{data.name}</h4>
+          <h4 className={styles['title']}>{data.name}</h4>
+          <img className={styles['img']} src={data.image} alt='img' />
         </HoloFrame>
       </div>
     </div>
