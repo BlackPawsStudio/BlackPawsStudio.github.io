@@ -221,5 +221,44 @@ Run \`npm run build\` to build the project. The build files will be stored in th
 You can go to the \`build/\` directory and open index.html file to see the results.`,
       image: 'https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/image_1_yyam8h.png',
     },
+    {
+      name: 'A-life',
+      url: 'https://blackpawsstudio.github.io/A-life',
+      image:
+        'https://res.cloudinary.com/dxyapxi2t/image/upload/v1673678464/Screenshot_2023-01-14_094036_eutzkd.png',
+      description: `
+      ## A Life
+
+This is an application that is simulating artificial cell life based on the attraction and repulsion between dots.
+
+![image](https://res.cloudinary.com/dxyapxi2t/image/upload/v1673678464/Screenshot_2023-01-14_094036_eutzkd.png)
+
+#### How to play
+
+You can choose color and amount of dots manually or leave them being random, application generates random values automatically. Press \`Add\` button to add dots to the field. 
+
+Program automatically generates relations between dots (attraction or repulsion). 
+
+If you add another group, rules of relations with every dots group for it will be generated automatically as well. You can change those relation rules manually changing sliders in the \`Rules\` section. You can also randomize all rules by pressing \`Randomize rules\` button. 
+
+You also can pause and continue the simulation.`,
+    },
+    {
+      name: 'A-star',
+      url: 'https://blackpawsstudio.github.io/A-star',
+      image:
+        'https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png',
+      description: `## A Star
+
+This application is the realization of A-Star pathfinding algorithm.
+
+![image](https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png)
+
+#### How to use
+
+First you choose the size of the field you want to create. Keep in mind that this is an old project and huge fields will took long to render.
+
+When the field renders you have to set the start and end points of the field. Then you can set obstacles and choose if you want algorithm to count walking diagonally. When everything is set up, press \`Count path\` and the algorithm will render the path with blue color and all options it was looking through with wheat color. Press \`Reset path\` if you want to modify obstacles or \`Reset all\` to fully recreate the field.`,
+    },
   ],
 };
