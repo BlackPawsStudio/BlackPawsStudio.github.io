@@ -226,8 +226,7 @@ You can go to the \`build/\` directory and open index.html file to see the resul
       url: 'https://blackpawsstudio.github.io/A-life',
       image:
         'https://res.cloudinary.com/dxyapxi2t/image/upload/v1673678464/Screenshot_2023-01-14_094036_eutzkd.png',
-      description: `
-      ## A Life
+      description: `## A Life
 
 This is an application that is simulating artificial cell life based on the attraction and repulsion between dots.
 
