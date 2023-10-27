@@ -92,18 +92,16 @@ const GalleryPage = () => {
     }
   }, [isZoomed]);
 
-  console.log(currentProject);
-
   return isDesktop ? (
     <div
-      className={styles['container']}
+      className={styles["container"]}
       style={{
         perspective: `${clientWidth / 3}px`,
       }}
     >
       <ParticlesComponent />
       <div
-        className={styles['light']}
+        className={styles["light"]}
         style={{
           perspective: `${clientWidth / 3}px`,
         }}
@@ -111,20 +109,29 @@ const GalleryPage = () => {
         <div />
       </div>
       <h2
-        className={styles['page-title']}
+        className={styles["page-title"]}
         style={{
-          opacity: isZoomed ? '0' : '1',
+          opacity: isZoomed ? "0" : "1",
         }}
       >
         PROJECTS GALLERY
       </h2>
-      <button className={styles['button'] + ' ' + styles['button-b']} onClick={backButtonClick}>
+      <button
+        className={styles["button"] + " " + styles["button-b"]}
+        onClick={backButtonClick}
+      >
         <div />
       </button>
-      <button className={styles['button'] + ' ' + styles['button-l']} onClick={leftButtonClick}>
+      <button
+        className={styles["button"] + " " + styles["button-l"]}
+        onClick={leftButtonClick}
+      >
         <div />
       </button>
-      <button className={styles['button'] + ' ' + styles['button-r']} onClick={rightButtonClick}>
+      <button
+        className={styles["button"] + " " + styles["button-r"]}
+        onClick={rightButtonClick}
+      >
         <div />
       </button>
       <div
@@ -138,12 +145,12 @@ const GalleryPage = () => {
         <Prism
           outer
           showTile={slide}
-          width={clientWidth}
+          width={clientWidth * 1.5}
           height={clientHeight}
-          topColor={'transparent'}
-          bottomColor={'var(--main-darker-color)'}
-          border={'2px solid var(--main-color)'}
-          sideColor={'linear-gradient(transparent, var(--main-darker-color))'}
+          topColor={"transparent"}
+          bottomColor={"var(--main-darker-color)"}
+          border={"2px solid var(--main-color)"}
+          sideColor={"linear-gradient(transparent, var(--main-darker-color))"}
           sides={[
             <WelcomeTile />,
             ...projectsArr.map((el, _, arr) => (
@@ -168,17 +175,18 @@ const GalleryPage = () => {
       </div>
       {isZoomed && (
         <div
-          className={styles['project-container']}
+          className={styles["project-container"]}
           style={{
             perspective: `${clientWidth / 2}px`,
           }}
         >
+          <div className={styles["vignette"]}></div>
           <Prism
             showTile={projectSlide}
             border="3px solid var(--main-color)"
             width={clientWidth / 2}
             height={clientHeight / 2}
-            bottomColor={'var(--main-darker-color)'}
+            bottomColor={"var(--main-darker-color)"}
             sides={[
               <ProjectTitleSide
                 title={projectsArr[currentProject].name}
@@ -194,17 +202,17 @@ const GalleryPage = () => {
         </div>
       )}
       <div
-        className={styles['transition-leave']}
+        className={styles["transition-leave"]}
         style={{
-          opacity: isTransition ? '1' : '0',
-          visibility: isTransition ? 'visible' : 'hidden',
+          opacity: isTransition ? "1" : "0",
+          visibility: isTransition ? "visible" : "hidden",
         }}
       />
     </div>
   ) : (
-    <div className={styles['container']}>
+    <div className={styles["container"]}>
       <div
-        className={styles['light']}
+        className={styles["light"]}
         style={{
           perspective: `${clientWidth / 3}px`,
         }}
@@ -212,25 +220,28 @@ const GalleryPage = () => {
         <div />
       </div>
       <h2
-        className={styles['page-title']}
+        className={styles["page-title"]}
         style={{
-          opacity: isZoomed ? '0' : '1',
+          opacity: isZoomed ? "0" : "1",
         }}
       >
         PROJECTS GALLERY
       </h2>
-      <button className={styles['button'] + ' ' + styles['button-b']} onClick={backButtonClick}>
+      <button
+        className={styles["button"] + " " + styles["button-b"]}
+        onClick={backButtonClick}
+      >
         <div />
       </button>
       <button
-        className={styles['button'] + ' ' + styles['button-l']}
+        className={styles["button"] + " " + styles["button-l"]}
         ref={lButton}
         onClick={leftButtonClick}
       >
         <div />
       </button>
       <button
-        className={styles['button'] + ' ' + styles['button-r']}
+        className={styles["button"] + " " + styles["button-r"]}
         ref={rButton}
         onClick={rightButtonClick}
       >
@@ -238,9 +249,9 @@ const GalleryPage = () => {
       </button>
       <ParticlesComponent />
       <div
-        className={styles['swiper-container']}
+        className={styles["swiper-container"]}
         style={{
-          display: isZoomed ? 'none' : 'flex',
+          display: isZoomed ? "none" : "flex",
         }}
       >
         <Swiper
@@ -254,8 +265,6 @@ const GalleryPage = () => {
           }}
           onSlideChange={(swiper) => {
             if (!isZoomed && swiper.realIndex - 1 >= 0) {
-              console.log('ind', swiper.realIndex);
-              
               setCurrentProject(projectsArr.length - swiper.realIndex);
             }
           }}
@@ -284,10 +293,10 @@ const GalleryPage = () => {
       </div>
       {isZoomed && <ProjectDescription data={projectsArr[currentProject]} />}
       <div
-        className={styles['transition-leave']}
+        className={styles["transition-leave"]}
         style={{
-          opacity: isTransition ? '1' : '0',
-          visibility: isTransition ? 'visible' : 'hidden',
+          opacity: isTransition ? "1" : "0",
+          visibility: isTransition ? "visible" : "hidden",
         }}
       />
     </div>

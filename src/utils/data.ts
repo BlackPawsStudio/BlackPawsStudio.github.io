@@ -11,10 +11,19 @@ export interface DemoType {
 }
 
 export const demos: DemoSectionsType = {
-  'Production projects': [
+  "Production projects": [
     {
-      name: 'Roaries',
-      url: 'https://roaries.com/',
+      name: "ExploreLocations",
+      url: "https://explorelocations.com/",
+      description: `
+      
+      `,
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1698395656/Untitled_zeqeob.jpg?_s=public-apps",
+    },
+    {
+      name: "Roaries",
+      url: "https://roaries.com/",
       description: `## Roaries
       
 > Online pet's food store
@@ -29,11 +38,12 @@ export const demos: DemoSectionsType = {
 - Developed functionality and fixed styles for multiple components and pages
 - Developed complex video block for the main page
       `,
-      image: 'https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/Untitled_v4igae.png',
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/Untitled_v4igae.png",
     },
     {
-      name: 'Starly',
-      url: 'https://starly.io/',
+      name: "Starly",
+      url: "https://starly.io/",
       description: `## Starly
 
 > NFTs marketplace
@@ -47,11 +57,11 @@ export const demos: DemoSectionsType = {
 - Developed reusable components using a styled-components library and pixel-perfect mobile/desktop page layouts.
 - Firebase/Redux/Redux-Saga component/pages integration.`,
       image:
-        'https://res.cloudinary.com/dxyapxi2t/image/upload/v1671724774/Screenshot_2022-12-21_151001_x6kpvu.png',
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671724774/Screenshot_2022-12-21_151001_x6kpvu.png",
     },
     {
-      name: 'MyTend.com',
-      url: 'https://mytend.com/',
+      name: "MyTend.com",
+      url: "https://mytend.com/",
       description: `## Mytend.com
 
 > House warranty and insurance product NDA (USA)
@@ -66,13 +76,13 @@ export const demos: DemoSectionsType = {
 - Implement new widget design;
 - Complex visual components.`,
       image:
-        'https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785718/Screenshot_2022-05-05_154947_snb5e8.png',
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785718/Screenshot_2022-05-05_154947_snb5e8.png",
     },
   ],
-  'My pet projects': [
+  "My pet projects": [
     {
-      name: 'Next Notes',
-      url: 'https://next-notes.netlify.app/',
+      name: "Next Notes",
+      url: "https://next-notes.netlify.app/",
       description: `## NEXT NOTES
 
 This is an application where users can create their own notes and set up them as they wish.
@@ -115,11 +125,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Run \`npm run build\` to build the project. The build files will be stored in the \`.next/\` directory. 
 Run \`npm run start\` to start production ready project on [http://localhost:3000](http://localhost:3000).`,
-      image: 'https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/image_p92gw8.png',
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/image_p92gw8.png",
     },
     {
-      name: 'Dungeon cards AI',
-      url: 'https://blackpawsstudio.github.io/Dungeon-cards/',
+      name: "Dungeon cards AI",
+      url: "https://blackpawsstudio.github.io/Dungeon-cards/",
       description: `## DUNGEON CARDS GAME
 
 This is an adaptation of android game [Dungeon cards](https://play.google.com/store/apps/details?id=com.The717pixels.DungeonCards&hl=ru&gl=US) and implementation of autoplay algorithm.
@@ -158,11 +169,11 @@ To run the project write \`npm run\` in terminal and live development server wil
 Run \`npm run build\` to build the project. The build files will be stored in the \`dist/\` directory. 
 You can go to the \`dist/\` directory and open \`index.html\` file to see the results.`,
       image:
-        'https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785716/Screenshot_2022-01-12_131042_sdlhqz.png',
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785716/Screenshot_2022-01-12_131042_sdlhqz.png",
     },
     {
-      name: 'Auto Dominoes',
-      url: 'https://blackpawsstudio.github.io/Dominoes-game/',
+      name: "Auto Dominoes",
+      url: "https://blackpawsstudio.github.io/Dominoes-game/",
       description: `## Dominoes Game
 
 This is an application that stimulates game of Dominoes between several players.
@@ -219,13 +230,14 @@ To run the project write \`npm run start\` in terminal and live development serv
 
 Run \`npm run build\` to build the project. The build files will be stored in the \`build/\` directory. 
 You can go to the \`build/\` directory and open index.html file to see the results.`,
-      image: 'https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/image_1_yyam8h.png',
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/image_1_yyam8h.png",
     },
     {
-      name: 'A-life',
-      url: 'https://blackpawsstudio.github.io/A-life',
+      name: "A-life",
+      url: "https://blackpawsstudio.github.io/A-life",
       image:
-        'https://res.cloudinary.com/dxyapxi2t/image/upload/v1673678464/Screenshot_2023-01-14_094036_eutzkd.png',
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1673678464/Screenshot_2023-01-14_094036_eutzkd.png",
       description: `## A Life
 
 This is an application that is simulating artificial cell life based on the attraction and repulsion between dots.
@@ -242,22 +254,22 @@ If you add another group, rules of relations with every dots group for it will b
 
 You also can pause and continue the simulation.`,
     },
-    {
-      name: 'A-star',
-      url: 'https://blackpawsstudio.github.io/A-star',
-      image:
-        'https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png',
-      description: `## A Star
+//     {
+//       name: "A-star",
+//       url: "https://blackpawsstudio.github.io/A-star",
+//       image:
+//         "https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png",
+//       description: `## A Star
 
-This application is the realization of A-Star pathfinding algorithm.
+// This application is the realization of A-Star pathfinding algorithm.
 
-![image](https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png)
+// ![image](https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png)
 
-#### How to use
+// #### How to use
 
-First you choose the size of the field you want to create. Keep in mind that this is an old project and huge fields will took long to render.
+// First you choose the size of the field you want to create. Keep in mind that this is an old project and huge fields will took long to render.
 
-When the field renders you have to set the start and end points of the field. Then you can set obstacles and choose if you want algorithm to count walking diagonally. When everything is set up, press \`Count path\` and the algorithm will render the path with blue color and all options it was looking through with wheat color. Press \`Reset path\` if you want to modify obstacles or \`Reset all\` to fully recreate the field.`,
-    },
+// When the field renders you have to set the start and end points of the field. Then you can set obstacles and choose if you want algorithm to count walking diagonally. When everything is set up, press \`Count path\` and the algorithm will render the path with blue color and all options it was looking through with wheat color. Press \`Reset path\` if you want to modify obstacles or \`Reset all\` to fully recreate the field.`,
+//     },
   ],
 };
