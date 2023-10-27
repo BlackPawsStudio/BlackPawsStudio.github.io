@@ -13,10 +13,42 @@ export interface DemoType {
 export const demos: DemoSectionsType = {
   "Production projects": [
     {
+      name: "Infinity2Go",
+      url: "https://i2go.app/",
+      description: `## Infinity2Go
+
+> The application for storing and selling courses and information about cryptocurrencies in the integrated platform
+
+**Position:** Full-stack developer
+
+**Used Technologies:** React, Next.js, tailwind, serverless, AWS Lambda, AWS DynamoDB, React Query, React Native
+
+**My accomplishments:**
+
+- Enhanced the functionality of all admin panel pages by optimizing logic and reducing API requests, resulting in cost savings.
+- Improved the web and mobile apps in accordance with updated UX/UI guidelines.
+- Implemented smart filters for the admin app.
+- Provided development support for AWS Lambdas on the backend.
+    `,
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1698398944/Untitled_1_tzktd6.png",
+    },
+    {
       name: "ExploreLocations",
       url: "https://explorelocations.com/",
-      description: `
-      
+      description: `## ExploreLocations
+
+> The platform that we are building helps users discover various points of interest across the world on the up-to-date map
+
+**Position:** Full-stack developer
+
+**Used technologies:** React, Next.js, tailwind, AWS, Leaflet React, Stadia Maps API
+
+**My accomplishments:**
+
+- Build all pages from design
+- Create Leaflet Maps using Stadia Maps API and add application data on them
+- Building MVP application from scratch
       `,
       image:
         "https://res.cloudinary.com/dxyapxi2t/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1698395656/Untitled_zeqeob.jpg?_s=public-apps",
@@ -254,22 +286,22 @@ If you add another group, rules of relations with every dots group for it will b
 
 You also can pause and continue the simulation.`,
     },
-//     {
-//       name: "A-star",
-//       url: "https://blackpawsstudio.github.io/A-star",
-//       image:
-//         "https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png",
-//       description: `## A Star
+    //     {
+    //       name: "A-star",
+    //       url: "https://blackpawsstudio.github.io/A-star",
+    //       image:
+    //         "https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png",
+    //       description: `## A Star
 
-// This application is the realization of A-Star pathfinding algorithm.
+    // This application is the realization of A-Star pathfinding algorithm.
 
-// ![image](https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png)
+    // ![image](https://res.cloudinary.com/dxyapxi2t/image/upload/v1673679339/Screenshot_2023-01-14_095211_jkuecg.png)
 
-// #### How to use
+    // #### How to use
 
-// First you choose the size of the field you want to create. Keep in mind that this is an old project and huge fields will took long to render.
+    // First you choose the size of the field you want to create. Keep in mind that this is an old project and huge fields will took long to render.
 
-// When the field renders you have to set the start and end points of the field. Then you can set obstacles and choose if you want algorithm to count walking diagonally. When everything is set up, press \`Count path\` and the algorithm will render the path with blue color and all options it was looking through with wheat color. Press \`Reset path\` if you want to modify obstacles or \`Reset all\` to fully recreate the field.`,
-//     },
+    // When the field renders you have to set the start and end points of the field. Then you can set obstacles and choose if you want algorithm to count walking diagonally. When everything is set up, press \`Count path\` and the algorithm will render the path with blue color and all options it was looking through with wheat color. Press \`Reset path\` if you want to modify obstacles or \`Reset all\` to fully recreate the field.`,
+    //     },
   ],
 };

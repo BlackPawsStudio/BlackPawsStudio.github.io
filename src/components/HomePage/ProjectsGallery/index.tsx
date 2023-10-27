@@ -26,6 +26,15 @@ const ProjectsGallery = ({ setIsTransition }: ProjectsGalleryProps) => {
         light
         onClick={goToGallery}
       >
+        <img
+          className={styles["image"]}
+          src={
+            "https://res.cloudinary.com/dxyapxi2t/image/upload/v1698396341/Screenshot_2023-10-27_at_11.45.24_sikuhl.png"
+          }
+          width={400}
+          height={400}
+          alt=""
+        />
         <h2 className={`button ${styles["title"]}`}>Go to projects gallery</h2>
       </HoloFrame>
     </div>
