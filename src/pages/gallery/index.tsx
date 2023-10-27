@@ -1,17 +1,18 @@
-import 'swiper/css';
-import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import ParticlesComponent from '../../components/Particles';
-import Prism from '../../components/Prism';
-import Project from '../../components/ProjectsGallery/Project';
-import ProjectDescription from '../../components/ProjectsGallery/Project/Description';
-import ProjectDemo from '../../components/ProjectsGallery/Project/Demo';
-import ProjectTitleSide from '../../components/ProjectsGallery/Project/Title';
-import WelcomeTile from '../../components/ProjectsGallery/Welcome';
-import { demos } from '../../utils/data';
-import styles from '../index.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
+import "swiper/css";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ParticlesComponent from "../../components/Particles";
+import Prism from "../../components/Prism";
+import Project from "../../components/ProjectsGallery/Project";
+import ProjectDescription from "../../components/ProjectsGallery/Project/Description";
+import ProjectDemo from "../../components/ProjectsGallery/Project/Demo";
+import ProjectTitleSide from "../../components/ProjectsGallery/Project/Title";
+import WelcomeTile from "../../components/ProjectsGallery/Welcome";
+import { demos } from "../../utils/data";
+import styles from "../index.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import ReactHotkeys from "react-hot-keys";
 
 const projectsArr = Object.values(demos)
   .flat()
@@ -81,7 +82,7 @@ const GalleryPage = () => {
     } else {
       setIsTransition(true);
       setTimeout(() => {
-        navigate('/');
+        navigate("/");
       }, 500);
     }
   };
@@ -99,115 +100,143 @@ const GalleryPage = () => {
         perspective: `${clientWidth / 3}px`,
       }}
     >
-      <ParticlesComponent />
-      <div
-        className={styles["light"]}
-        style={{
-          perspective: `${clientWidth / 3}px`,
-        }}
-      >
-        <div />
-      </div>
-      <h2
-        className={styles["page-title"]}
-        style={{
-          opacity: isZoomed ? "0" : "1",
-        }}
-      >
-        PROJECTS GALLERY
-      </h2>
-      <button
-        className={styles["button"] + " " + styles["button-b"]}
-        onClick={backButtonClick}
-      >
-        <div />
-      </button>
-      <button
-        className={styles["button"] + " " + styles["button-l"]}
-        onClick={leftButtonClick}
-      >
-        <div />
-      </button>
-      <button
-        className={styles["button"] + " " + styles["button-r"]}
-        onClick={rightButtonClick}
-      >
-        <div />
-      </button>
-      <div
-        className="prism-container"
-        style={{
-          perspective: `${clientWidth / 3}px`,
-          transform: `translateZ(${clientWidth / (isZoomed ? 4.5 : 9)}px)`,
-          opacity: isZoomed ? 0 : 1,
-        }}
-      >
-        <Prism
-          outer
-          showTile={slide}
-          width={clientWidth * 1.5}
-          height={clientHeight}
-          topColor={"transparent"}
-          bottomColor={"var(--main-darker-color)"}
-          border={"2px solid var(--main-color)"}
-          sideColor={"linear-gradient(transparent, var(--main-darker-color))"}
-          sides={[
-            <WelcomeTile />,
-            ...projectsArr.map((el, _, arr) => (
-              <Project
-                zoom={() => {
-                  if (
-                    el.id ===
-                    (slide > 0
-                      ? (slide % (arr.length + 1)) - 1
-                      : arr.length - (Math.abs(slide) % (arr.length + 1)))
-                  ) {
-                    setIsZoomed(!isZoomed);
-                    setCurrentProject(projectsArr.length - el.id - 1);
-                  }
+      <ReactHotkeys keyName="left, a" onKeyDown={leftButtonClick}>
+        <ReactHotkeys keyName="right, d" onKeyDown={rightButtonClick}>
+          <ReactHotkeys
+            keyName="up"
+            onKeyDown={() => {
+              if (slide % (projectsArr.length + 1) !== 0) {
+                setIsZoomed(!isZoomed);
+                setCurrentProject(
+                  slide >= 0
+                    ? projectsArr.length -
+                        (slide > projectsArr.length
+                          ? slide % (projectsArr.length + 1)
+                          : slide)
+                    : Math.abs(slide % (projectsArr.length + 1)) - 1
+                );
+              }
+            }}
+          >
+            <ReactHotkeys keyName="down, esc" onKeyDown={backButtonClick}>
+              <ParticlesComponent />
+              <div
+                className={styles["light"]}
+                style={{
+                  perspective: `${clientWidth / 3}px`,
                 }}
-                isZoomed={isZoomed}
-                data={el}
+              >
+                <div />
+              </div>
+              <h2
+                className={styles["page-title"]}
+                style={{
+                  opacity: isZoomed ? "0" : "1",
+                }}
+              >
+                PROJECTS GALLERY
+              </h2>
+              <button
+                className={styles["button"] + " " + styles["button-b"]}
+                onClick={backButtonClick}
+              >
+                <div />
+              </button>
+              <button
+                className={styles["button"] + " " + styles["button-l"]}
+                onClick={leftButtonClick}
+              >
+                <div />
+              </button>
+              <button
+                className={styles["button"] + " " + styles["button-r"]}
+                onClick={rightButtonClick}
+              >
+                <div />
+              </button>
+              <div
+                className="prism-container"
+                style={{
+                  perspective: `${clientWidth / 3}px`,
+                  transform: `translateZ(${
+                    clientWidth / (isZoomed ? 4.5 : 9)
+                  }px)`,
+                  opacity: isZoomed ? 0 : 1,
+                }}
+              >
+                <Prism
+                  outer
+                  showTile={slide}
+                  width={clientWidth * 1.5}
+                  height={clientHeight}
+                  topColor={"transparent"}
+                  bottomColor={"var(--main-darker-color)"}
+                  border={"2px solid var(--main-color)"}
+                  sideColor={
+                    "linear-gradient(transparent, var(--main-darker-color))"
+                  }
+                  sides={[
+                    <WelcomeTile />,
+                    ...projectsArr.map((el, _, arr) => (
+                      <Project
+                        zoom={() => {
+                          if (
+                            el.id ===
+                            (slide > 0
+                              ? (slide % (arr.length + 1)) - 1
+                              : arr.length -
+                                (Math.abs(slide) % (arr.length + 1)))
+                          ) {
+                            setIsZoomed(!isZoomed);
+                            setCurrentProject(projectsArr.length - el.id - 1);
+                          }
+                        }}
+                        isZoomed={isZoomed}
+                        data={el}
+                      />
+                    )),
+                  ]}
+                />
+              </div>
+              {isZoomed && (
+                <div
+                  className={styles["project-container"]}
+                  style={{
+                    perspective: `${clientWidth / 2}px`,
+                  }}
+                >
+                  <div className={styles["vignette"]}></div>
+                  <Prism
+                    showTile={projectSlide}
+                    border="3px solid var(--main-color)"
+                    width={clientWidth / 2}
+                    height={clientHeight / 2}
+                    bottomColor={"var(--main-darker-color)"}
+                    sides={[
+                      <ProjectTitleSide
+                        title={projectsArr[currentProject].name}
+                        image={projectsArr[currentProject].image}
+                      />,
+                      <ProjectDescription data={projectsArr[currentProject]} />,
+                      <ProjectDemo
+                        link={projectsArr[currentProject].url}
+                        image={projectsArr[currentProject].image}
+                      />,
+                    ]}
+                  />
+                </div>
+              )}
+              <div
+                className={styles["transition-leave"]}
+                style={{
+                  opacity: isTransition ? "1" : "0",
+                  visibility: isTransition ? "visible" : "hidden",
+                }}
               />
-            )),
-          ]}
-        />
-      </div>
-      {isZoomed && (
-        <div
-          className={styles["project-container"]}
-          style={{
-            perspective: `${clientWidth / 2}px`,
-          }}
-        >
-          <div className={styles["vignette"]}></div>
-          <Prism
-            showTile={projectSlide}
-            border="3px solid var(--main-color)"
-            width={clientWidth / 2}
-            height={clientHeight / 2}
-            bottomColor={"var(--main-darker-color)"}
-            sides={[
-              <ProjectTitleSide
-                title={projectsArr[currentProject].name}
-                image={projectsArr[currentProject].image}
-              />,
-              <ProjectDescription data={projectsArr[currentProject]} />,
-              <ProjectDemo
-                link={projectsArr[currentProject].url}
-                image={projectsArr[currentProject].image}
-              />,
-            ]}
-          />
-        </div>
-      )}
-      <div
-        className={styles["transition-leave"]}
-        style={{
-          opacity: isTransition ? "1" : "0",
-          visibility: isTransition ? "visible" : "hidden",
-        }}
-      />
+            </ReactHotkeys>
+          </ReactHotkeys>
+        </ReactHotkeys>
+      </ReactHotkeys>
     </div>
   ) : (
     <div className={styles["container"]}>

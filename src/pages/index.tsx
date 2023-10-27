@@ -10,6 +10,7 @@ import Prism from '../components/Prism';
 import styles from './index.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
+import ReactHotkeys from 'react-hot-keys';
 
 const isDesktop = document.body.clientWidth > 1100;
 
@@ -44,14 +45,14 @@ const HomePage = () => {
 
   return isDesktop ? (
     <div
-      className={styles['container']}
+      className={styles["container"]}
       style={{
         perspective: `${clientWidth / 3}px`,
       }}
     >
       <ParticlesComponent />
       <div
-        className={styles['light']}
+        className={styles["light"]}
         style={{
           perspective: `${clientWidth / 3}px`,
         }}
@@ -59,13 +60,13 @@ const HomePage = () => {
         <div />
       </div>
       <button
-        className={styles['button'] + ' ' + styles['button-l']}
+        className={styles["button"] + " " + styles["button-l"]}
         onClick={() => setSlide(slide - 1)}
       >
         <div />
       </button>
       <button
-        className={styles['button'] + ' ' + styles['button-r']}
+        className={styles["button"] + " " + styles["button-r"]}
         onClick={() => setSlide(slide + 1)}
       >
         <div />
@@ -77,35 +78,41 @@ const HomePage = () => {
           transform: `translateZ(${clientWidth / 9}px)`,
         }}
       >
-        <Prism
-          outer
-          showTile={slide}
-          width={clientWidth}
-          height={clientHeight}
-          topColor={'transparent'}
-          bottomColor={'var(--main-darker-color)'}
-          border={'2px solid var(--main-color)'}
-          sideColor={'linear-gradient(transparent, var(--main-darker-color))'}
-          sides={[
-            <WelcomeTile />,
-            <Projects />,
-            <AboutMeTile />,
-            <ProjectsGallery setIsTransition={setIsTransition} />,
-          ]}
-        />
+        <ReactHotkeys keyName="left, a" onKeyDown={() => setSlide(slide - 1)}>
+          <ReactHotkeys keyName="right, d" onKeyDown={() => setSlide(slide + 1)}>
+            <Prism
+              outer
+              showTile={slide}
+              width={clientWidth}
+              height={clientHeight}
+              topColor={"transparent"}
+              bottomColor={"var(--main-darker-color)"}
+              border={"2px solid var(--main-color)"}
+              sideColor={
+                "linear-gradient(transparent, var(--main-darker-color))"
+              }
+              sides={[
+                <WelcomeTile />,
+                <Projects />,
+                <AboutMeTile />,
+                <ProjectsGallery setIsTransition={setIsTransition} />,
+              ]}
+            />
+          </ReactHotkeys>
+        </ReactHotkeys>
       </div>
       <div
-        className={styles['transition-leave']}
+        className={styles["transition-leave"]}
         style={{
-          opacity: isTransition ? '1' : '0',
-          visibility: isTransition ? 'visible' : 'hidden',
+          opacity: isTransition ? "1" : "0",
+          visibility: isTransition ? "visible" : "hidden",
         }}
       />
     </div>
   ) : (
-    <div className={styles['container']}>
+    <div className={styles["container"]}>
       <div
-        className={styles['light']}
+        className={styles["light"]}
         style={{
           perspective: `${clientWidth / 3}px`,
         }}
@@ -114,20 +121,20 @@ const HomePage = () => {
       </div>
       <ParticlesComponent />
       <button
-        className={styles['button'] + ' ' + styles['button-l']}
+        className={styles["button"] + " " + styles["button-l"]}
         onClick={() => setSlide(slide - 1)}
         ref={lButton}
       >
         <div />
       </button>
       <button
-        className={styles['button'] + ' ' + styles['button-r']}
+        className={styles["button"] + " " + styles["button-r"]}
         onClick={() => setSlide(slide + 1)}
         ref={rButton}
       >
         <div />
       </button>
-      <div className={styles['swiper-container']}>
+      <div className={styles["swiper-container"]}>
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -156,10 +163,10 @@ const HomePage = () => {
         </Swiper>
       </div>
       <div
-        className={styles['transition-leave']}
+        className={styles["transition-leave"]}
         style={{
-          opacity: isTransition ? '1' : '0',
-          visibility: isTransition ? 'visible' : 'hidden',
+          opacity: isTransition ? "1" : "0",
+          visibility: isTransition ? "visible" : "hidden",
         }}
       />
     </div>
