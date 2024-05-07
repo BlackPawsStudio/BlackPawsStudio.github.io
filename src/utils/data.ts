@@ -13,6 +13,27 @@ export interface DemoType {
 export const demos: DemoSectionsType = {
   "Production projects": [
     {
+      name: "Athletic Greens AG1",
+      url: "https://drinkag1.com/",
+      description: `## Athletic Greens AG1
+
+> Marketplace for selling a science-driven supplement that supports physical health and mental performance.
+
+**Position:** Full-stack developer
+
+**Used Technologies:** React, Next.js, Sanity, SCSS, Storybook, Jest, Trustpilot, Klaviyo
+
+**My accomplishments:**
+
+- Implemented Klaviyo flow for customers to leave reviews on Trustpilot generated reviews pages.
+- Developed multiple components to use in Sanity CMS for building pages.
+- Implemented various systems in different parts of the app.
+- Huge number of created Storybooks and tests for components.
+`,
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1715092419/Untitled_qv9by4.png",
+    },
+    {
       name: "Infinity2Go",
       url: "https://i2go.app/",
       description: `## Infinity2Go

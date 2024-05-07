@@ -1,16 +1,13 @@
-import { certificates } from '../../../utils/certificates';
-import HoloFrame from '../../HologramFrame';
-import styles from './index.module.css';
-
+import { certificates } from "../../../utils/certificates";
+import HoloFrame from "../../HologramFrame";
+import styles from "./index.module.css";
 
 const today = new Date();
-const birthDate = new Date('2002-10-04');
+const birthDate = new Date("2002-10-04");
 let age = today.getFullYear() - birthDate.getFullYear();
 const m = today.getMonth() - birthDate.getMonth();
-const myAge = m < 0 || (m === 0 && today.getDate() < birthDate.getDate()) ?
-  age-- : age;
-
-// const myAge = new Date().getFullYear() - 2002 - (new Date().getMonth() >= 10 ? 0 : 1);
+const myAge =
+  m > 0 || (m === 0 && today.getDate() >= birthDate.getDate()) ? age : age - 1;
 
 const AboutMeTile = () => (
   <div className={styles["container"]}>
@@ -26,7 +23,7 @@ const AboutMeTile = () => (
             <h2>About me:</h2>
           </HoloFrame>
           <p>
-            I am Artemiy Bal, {myAge} years old. <br /> I am a typescript React
+            I am Artsemi Bal, {myAge} years old. <br /> I am a typescript React
             developer with some good knowledge in Node.js libraries Express and
             Socket.io.
             <br /> My most common stack is Next.js, Tailwind, Zustand and many
