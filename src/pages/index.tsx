@@ -1,16 +1,15 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { useEffect, useRef, useState } from 'react';
-import AboutMeTile from '../components/HomePage/AboutMeTile';
-import Projects from '../components/HomePage/Projects';
-import ProjectsGallery from '../components/HomePage/ProjectsGallery';
-import WelcomeTile from '../components/HomePage/WelcomeTile';
-import ParticlesComponent from '../components/Particles';
-import Prism from '../components/Prism';
-import styles from './index.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
-import ReactHotkeys from 'react-hot-keys';
+import "swiper/css";
+import "swiper/css/navigation";
+import { useEffect, useRef, useState } from "react";
+import AboutMeTile from "../components/HomePage/AboutMeTile";
+import Projects from "../components/HomePage/Projects";
+import ProjectsGallery from "../components/HomePage/ProjectsGallery";
+import WelcomeTile from "../components/HomePage/WelcomeTile";
+import Prism from "../components/Prism";
+import styles from "./index.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import ReactHotkeys from "react-hot-keys";
 
 const isDesktop = document.body.clientWidth > 1100;
 
@@ -50,7 +49,7 @@ const HomePage = () => {
         perspective: `${clientWidth / 3}px`,
       }}
     >
-      <ParticlesComponent />
+      {/* <ParticlesComponent /> */}
       <div
         className={styles["light"]}
         style={{
@@ -61,25 +60,26 @@ const HomePage = () => {
       </div>
       <button
         className={styles["button"] + " " + styles["button-l"]}
-        onClick={() => setSlide(slide - 1)}
+        onClick={() => setSlide(slide + 1)}
       >
         <div />
       </button>
       <button
         className={styles["button"] + " " + styles["button-r"]}
-        onClick={() => setSlide(slide + 1)}
+        onClick={() => setSlide(slide - 1)}
       >
         <div />
       </button>
       <div
-        className="prism-container"
         style={{
           perspective: `${clientWidth / 3}px`,
-          transform: `translateZ(${clientWidth / 9}px)`,
         }}
       >
-        <ReactHotkeys keyName="left, a" onKeyDown={() => setSlide(slide - 1)}>
-          <ReactHotkeys keyName="right, d" onKeyDown={() => setSlide(slide + 1)}>
+        <ReactHotkeys keyName="left, a" onKeyDown={() => setSlide(slide + 1)}>
+          <ReactHotkeys
+            keyName="right, d"
+            onKeyDown={() => setSlide(slide - 1)}
+          >
             <Prism
               outer
               showTile={slide}
@@ -119,7 +119,7 @@ const HomePage = () => {
       >
         <div />
       </div>
-      <ParticlesComponent />
+      {/* <ParticlesComponent /> */}
       <button
         className={styles["button"] + " " + styles["button-l"]}
         onClick={() => setSlide(slide - 1)}

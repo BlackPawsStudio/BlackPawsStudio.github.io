@@ -1,5 +1,4 @@
 .container {
-  transform: rotateY(180deg);
   text-align: center;
   height: 100%;
   width: 100%;
@@ -20,11 +19,4 @@
 
 .content-wrapper {
   overflow: auto;
-}
-
-@media (max-width: 1100px) {
-  .container {
-    transform: rotateY(0deg);
-    height: 90%;
-  }
 }
