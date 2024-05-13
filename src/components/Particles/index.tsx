@@ -85,7 +85,7 @@ const ParticlesComponent = ({
 
       update();
     }
-  }, [height, width]);
+  }, [amount, height, width]);
 
   return (
     <div className={styles["container"]}>
