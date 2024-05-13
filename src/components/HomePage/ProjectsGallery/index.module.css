@@ -9,7 +9,6 @@
   row-gap: 25px;
   justify-content: center;
   overflow: hidden;
-  /* backface-visibility: hidden; */
 }
 
 .redirect {

@@ -74,6 +74,8 @@ const HomePage = () => {
         style={{
           perspective: `${clientWidth / 3}px`,
         }}
+        className="w-full h-full"
+        onClick={() => console.log("ab")}
       >
         <ReactHotkeys keyName="left, a" onKeyDown={() => setSlide(slide + 1)}>
           <ReactHotkeys

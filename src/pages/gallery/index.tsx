@@ -63,7 +63,7 @@ const GalleryPage = () => {
     if (isZoomed) {
       setProjectSlide(projectSlide + 1);
     } else {
-      setSlide(slide - 1);
+      setSlide(slide + 1);
     }
   };
 
@@ -71,7 +71,7 @@ const GalleryPage = () => {
     if (isZoomed) {
       setProjectSlide(projectSlide - 1);
     } else {
-      setSlide(slide + 1);
+      setSlide(slide - 1);
     }
   };
 
@@ -119,7 +119,7 @@ const GalleryPage = () => {
             }}
           >
             <ReactHotkeys keyName="down, esc" onKeyDown={backButtonClick}>
-              <ParticlesComponent />
+              {/* <ParticlesComponent /> */}
               <div
                 className={styles["light"]}
                 style={{
@@ -167,8 +167,8 @@ const GalleryPage = () => {
                 <Prism
                   outer
                   showTile={slide}
-                  width={clientWidth * 1.5}
-                  height={clientHeight}
+                  width={clientWidth / 3}
+                  height={clientHeight / 3}
                   topColor={"transparent"}
                   bottomColor={"var(--main-darker-color)"}
                   border={"2px solid var(--main-color)"}

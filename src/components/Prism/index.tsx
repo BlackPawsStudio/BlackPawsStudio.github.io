@@ -15,6 +15,23 @@ interface PrismProps {
   outer?: boolean;
 }
 
+// const shouldRender = (id: number, showTile: number, length: number) => {
+//   const current = ((showTile % length) + length) % length;
+//   if (id === current + 1 || id === current - 1) {
+//     return true;
+//   }
+//   if (current === 0 && id === length - 1) {
+//     return true;
+//   }
+//   if (current === length - 1 && id === 0) {
+//     return true;
+//   }
+//   if (current === id) {
+//     return true;
+//   }
+//   return false;
+// };
+
 const Prism = ({
   outer,
   width,
@@ -45,6 +62,7 @@ const Prism = ({
         Math.sin((90 / 180) * Math.PI)
     );
   }, [outer, sides.length, size, width]);
+
   return (
     <div
       className={`relative ${spinL ? "animate-rotateAnimL" : ""} ${
@@ -63,6 +81,7 @@ const Prism = ({
         }deg)`,
         transformStyle: "preserve-3d",
       }}
+      onClick={() => console.log("b")}
     >
       {sides.map((el, id) => (
         <Fragment key={id}>
@@ -101,6 +120,7 @@ const Prism = ({
               }deg)
               translateZ(${space}px) ${outer ? "rotateY(180deg)" : ""}`,
               overflow: "hidden",
+              zIndex: 30
             }}
           >
             {el}

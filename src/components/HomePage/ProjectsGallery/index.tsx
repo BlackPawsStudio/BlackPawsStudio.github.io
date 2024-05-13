@@ -22,9 +22,13 @@ const ProjectsGallery = ({ setIsTransition }: ProjectsGalleryProps) => {
         style={{
           height: "70%",
           cursor: "pointer",
+          overflow: "hidden",
         }}
         light
-        onClick={goToGallery}
+        onClick={() => {
+          console.log('a')
+          goToGallery()
+        }}
       >
         <img
           className={styles["image"]}
