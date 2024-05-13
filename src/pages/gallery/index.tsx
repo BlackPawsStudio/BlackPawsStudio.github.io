@@ -119,7 +119,11 @@ const GalleryPage = () => {
             }}
           >
             <ReactHotkeys keyName="down, esc" onKeyDown={backButtonClick}>
-              <ParticlesComponent />
+              <ParticlesComponent
+                width={clientWidth}
+                height={clientHeight}
+                amount={120}
+              />
               <div
                 className={styles["light"]}
                 style={{
@@ -279,7 +283,11 @@ const GalleryPage = () => {
       >
         <div />
       </button>
-      <ParticlesComponent />
+      <ParticlesComponent
+        width={clientWidth}
+        height={clientHeight}
+        amount={50}
+      />
       <div
         className={styles["swiper-container"]}
         style={{

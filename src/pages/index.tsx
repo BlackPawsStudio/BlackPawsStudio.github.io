@@ -50,7 +50,11 @@ const HomePage = () => {
         perspective: `${clientWidth / 3}px`,
       }}
     >
-      {/* <ParticlesComponent /> */}
+      <ParticlesComponent
+        width={clientWidth}
+        height={clientHeight}
+        amount={120}
+      />
       <div
         className={styles["light"]}
         style={{
@@ -124,7 +128,11 @@ const HomePage = () => {
       >
         <div />
       </div>
-      <ParticlesComponent />
+      <ParticlesComponent
+        width={clientWidth}
+        height={clientHeight}
+        amount={70}
+      />
       <button
         className={styles["button"] + " " + styles["button-l"]}
         onClick={() => setSlide(slide - 1)}
