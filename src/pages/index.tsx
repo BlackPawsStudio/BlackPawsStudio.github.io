@@ -50,7 +50,7 @@ const HomePage = () => {
         perspective: `${clientWidth / 3}px`,
       }}
     >
-      <ParticlesComponent />
+      {/* <ParticlesComponent /> */}
       <div
         className={styles["light"]}
         style={{
@@ -63,12 +63,14 @@ const HomePage = () => {
         className={styles["button"] + " " + styles["button-l"]}
         onClick={() => setSlide(slide - 1)}
       >
+        <span />
         <div />
       </button>
       <button
         className={styles["button"] + " " + styles["button-r"]}
         onClick={() => setSlide(slide + 1)}
       >
+        <span />
         <div />
       </button>
       <div
@@ -79,7 +81,10 @@ const HomePage = () => {
         }}
       >
         <ReactHotkeys keyName="left, a" onKeyDown={() => setSlide(slide - 1)}>
-          <ReactHotkeys keyName="right, d" onKeyDown={() => setSlide(slide + 1)}>
+          <ReactHotkeys
+            keyName="right, d"
+            onKeyDown={() => setSlide(slide + 1)}
+          >
             <Prism
               outer
               showTile={slide}

@@ -21,11 +21,21 @@
 }
 
 .button > div {
-  /* opacity: 0.25; */
+  opacity: 0.5;
   border-top: 25px solid transparent;
   border-right: 25px solid transparent;
   border-left: 25px solid transparent;
   border-bottom: 25px solid transparent;
+}
+
+.button > span {
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .button:hover > div {
@@ -41,6 +51,10 @@
   left: 0;
 }
 
+.button-l > span {
+  background: linear-gradient(-90deg, transparent, var(--main-color));
+}
+
 .button-l-div,
 .button-l > div {
   border-right: 50px solid var(--main-color);
@@ -52,8 +66,8 @@
   border-right: 50px solid var(--shade-color);
 }
 
-.button-l:hover {
-  background: linear-gradient(-90deg, transparent, var(--main-color));
+.button-l:hover > span {
+  opacity: 1;
 }
 
 .button-l:hover > div {
@@ -62,6 +76,10 @@
 
 .button-r {
   right: 0;
+}
+
+.button-r > span {
+  background: linear-gradient(90deg, transparent, var(--main-color));
 }
 
 .button-r-div,
@@ -75,8 +93,8 @@
   border-left: 50px solid var(--shade-color);
 }
 
-.button-r:hover {
-  background: linear-gradient(90deg, transparent, var(--main-color));
+.button-r:hover > span {
+  opacity: 1;
 }
 
 .button-r:hover > div {
@@ -102,12 +120,18 @@
   margin-right: -25px;
 }
 
+.button-b > span {
+  transition: all 0.5s;
+  opacity: 0;
+  background: linear-gradient(180deg, transparent, var(--main-color));
+}
+
 .darker-button-b > div {
   border-top: 50px solid var(--shade-color);
-} 
+}
 
-.button-b:hover {
-  background: linear-gradient(180deg, transparent, var(--main-color));
+.button-b:hover > span {
+  opacity: 1;
 }
 
 .button-b:hover > div {
@@ -163,20 +187,24 @@
 @keyframes light-flow {
   0%,
   100% {
-    transform: translateX(-50%) translateY(-25%) scaleY(200%) rotateX(30deg) rotateZ(-10deg);
+    transform: translateX(-50%) translateY(-25%) scaleY(200%) rotateX(30deg)
+      rotateZ(-10deg);
   }
   50% {
-    transform: translateX(-50%) translateY(-25%) scaleY(200%) rotateX(30deg) rotateZ(10deg);
+    transform: translateX(-50%) translateY(-25%) scaleY(200%) rotateX(30deg)
+      rotateZ(10deg);
   }
 }
 
 @keyframes light-flow-mobile {
   0%,
   100% {
-    transform: translateX(-50%) translateY(-15%) scaleY(200%) rotateX(18deg) rotateZ(-10deg);
+    transform: translateX(-50%) translateY(-15%) scaleY(200%) rotateX(18deg)
+      rotateZ(-10deg);
   }
   50% {
-    transform: translateX(-50%) translateY(-15%) scaleY(200%) rotateX(18deg) rotateZ(10deg);
+    transform: translateX(-50%) translateY(-15%) scaleY(200%) rotateX(18deg)
+      rotateZ(10deg);
   }
 }
 

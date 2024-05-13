@@ -140,18 +140,21 @@ const GalleryPage = () => {
                 className={styles["button"] + " " + styles["button-b"]}
                 onClick={backButtonClick}
               >
+                <span />
                 <div />
               </button>
               <button
                 className={styles["button"] + " " + styles["button-l"]}
                 onClick={leftButtonClick}
               >
+                <span />
                 <div />
               </button>
               <button
                 className={styles["button"] + " " + styles["button-r"]}
                 onClick={rightButtonClick}
               >
+                <span />
                 <div />
               </button>
               <div
