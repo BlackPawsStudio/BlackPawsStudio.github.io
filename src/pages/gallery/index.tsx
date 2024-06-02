@@ -14,7 +14,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import ReactHotkeys from "react-hot-keys";
 
-const projectsArr = Object.values(demos)
+const { RSS, ...projectsForGallery } = demos;
+
+const projectsArr = Object.values(projectsForGallery)
   .flat()
   .map((el, id) => {
     el.id = id;

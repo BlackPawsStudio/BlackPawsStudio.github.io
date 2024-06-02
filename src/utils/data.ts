@@ -325,4 +325,41 @@ You also can pause and continue the simulation.`,
     // When the field renders you have to set the start and end points of the field. Then you can set obstacles and choose if you want algorithm to count walking diagonally. When everything is set up, press \`Count path\` and the algorithm will render the path with blue color and all options it was looking through with wheat color. Press \`Reset path\` if you want to modify obstacles or \`Reset all\` to fully recreate the field.`,
     //     },
   ],
+  RSS: [
+    {
+      name: "Wildlife",
+      url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/wildlife/",
+      description: "",
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322629/Screenshot_2024-06-02_at_12.52.58_o38tpb.png",
+    },
+    {
+      name: "Virtual piano",
+      url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/virtual-piano/",
+      description: "",
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322628/Screenshot_2024-06-02_at_12.53.42_btesjx.png",
+    },
+    {
+      name: "Online zoo",
+      url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/online-zoo/",
+      description: "",
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322631/Screenshot_2024-06-02_at_12.54.37_immd1c.png",
+    },
+    {
+      name: "Photo filter",
+      url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/photo-filter/",
+      description: "",
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322629/Screenshot_2024-06-02_at_12.54.50_ws4zkz.png",
+    },
+    {
+      name: "Match-match game",
+      url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/match-match%20game/",
+      description: "",
+      image:
+        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322629/Screenshot_2024-06-02_at_12.55.14_jx8s5b.png",
+    },
+  ],
 };
