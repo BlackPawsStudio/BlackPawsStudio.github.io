@@ -1,19 +1,13 @@
-import { useNavigate } from "react-router-dom";
 import HoloFrame from "../../HologramFrame";
 import styles from "./index.module.css";
 
 interface ProjectsGalleryProps {
-  setIsTransition: (param: boolean) => void;
+  openGallery: () => void;
 }
 
-const ProjectsGallery = ({ setIsTransition }: ProjectsGalleryProps) => {
-  const navigate = useNavigate();
-
+const ProjectsGallery = ({ openGallery }: ProjectsGalleryProps) => {
   const goToGallery = () => {
-    setIsTransition(true);
-    setTimeout(() => {
-      navigate("/gallery");
-    }, 500);
+    openGallery();
   };
 
   return (

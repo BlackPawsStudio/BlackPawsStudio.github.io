@@ -176,6 +176,7 @@
   }
   .button {
     background: none !important;
+    bottom: 5vh;
   }
   .button-l,
   .button-r {

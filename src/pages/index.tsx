@@ -1,30 +1,38 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { useEffect, useRef, useState } from 'react';
-import AboutMeTile from '../components/HomePage/AboutMeTile';
-import Projects from '../components/HomePage/Projects';
-import ProjectsGallery from '../components/HomePage/ProjectsGallery';
-import WelcomeTile from '../components/HomePage/WelcomeTile';
-import ParticlesComponent from '../components/Particles';
-import Prism from '../components/Prism';
-import styles from './index.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
-import ReactHotkeys from 'react-hot-keys';
+import "swiper/css";
+import "swiper/css/navigation";
+import { useEffect, useRef, useState } from "react";
+import AboutMeTile from "../components/HomePage/AboutMeTile";
+import Projects from "../components/HomePage/Projects";
+import ProjectsGallery from "../components/HomePage/ProjectsGallery";
+import WelcomeTile from "../components/HomePage/WelcomeTile";
+import ParticlesComponent from "../components/Particles";
+import Prism from "../components/Prism";
+import styles from "./index.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import ReactHotkeys from "react-hot-keys";
+import { useNavigate } from "react-router-dom";
 
 const isDesktop = document.body.clientWidth > 1100;
 
-const HomePage = () => {
+interface HomePageProps {
+  setStep: () => void;
+}
+
+const HomePage = ({ setStep }: HomePageProps) => {
   const [isTransition, setIsTransition] = useState(true);
 
   const lButton = useRef(null);
   const rButton = useRef(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     setTimeout(() => {
       setIsTransition(false);
     }, 1000);
-  }, []);
+    navigate("/");
+  }, [navigate]);
 
   const [slide, setSlide] = useState(0);
   const [clientWidth, setClientWidth] = useState(document.body.clientWidth);
@@ -104,7 +112,14 @@ const HomePage = () => {
                 <WelcomeTile />,
                 <Projects />,
                 <AboutMeTile />,
-                <ProjectsGallery setIsTransition={setIsTransition} />,
+                <ProjectsGallery
+                  openGallery={() => {
+                    setIsTransition(true);
+                    setTimeout(() => {
+                      setStep();
+                    }, 500);
+                  }}
+                />,
               ]}
             />
           </ReactHotkeys>
@@ -167,7 +182,14 @@ const HomePage = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <ProjectsGallery setIsTransition={setIsTransition} />
+            <ProjectsGallery
+              openGallery={() => {
+                setIsTransition(true);
+                setTimeout(() => {
+                  setStep();
+                }, 500);
+              }}
+            />
           </SwiperSlide>
 
           <SwiperSlide>

@@ -73,8 +73,9 @@ ol {
 @media (max-width: 1100px) {
   .container {
     padding: 5% 0 15% 0;
+    justify-content: start;
   }
-  
+
   .url-container {
     display: block;
   }

@@ -1,6 +1,5 @@
 import "swiper/css";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import ParticlesComponent from "../../components/Particles";
 import Prism from "../../components/Prism";
 import Project from "../../components/ProjectsGallery/Project";
@@ -13,6 +12,7 @@ import styles from "../index.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import ReactHotkeys from "react-hot-keys";
+import { useNavigate } from "react-router-dom";
 
 const { RSS, ...projectsForGallery } = demos;
 
@@ -26,20 +26,45 @@ const projectsArr = Object.values(projectsForGallery)
 
 const isDesktop = document.body.clientWidth > 1100;
 
-const GalleryPage = () => {
-  const [slide, setSlide] = useState(0);
-  const [clientWidth, setClientWidth] = useState(document.body.clientWidth);
-  const [clientHeight, setClientHeight] = useState(document.body.clientHeight);
+interface GalleryPageProps {
+  goToHome: () => void;
+  preselectedProjectName: string | null;
+}
 
-  const [isZoomed, setIsZoomed] = useState(false);
-
-  const [projectSlide, setProjectSlide] = useState(0);
-
-  const [currentProject, setCurrentProject] = useState(0);
+const GalleryPage = ({
+  goToHome,
+  preselectedProjectName,
+}: GalleryPageProps) => {
+  const preselectedProject = projectsArr.find(
+    (el) => el.name === preselectedProjectName
+  );
 
   const navigate = useNavigate();
 
+  const [slide, setSlide] = useState(
+    typeof preselectedProject?.id === "number" ? preselectedProject.id + 1 : 0
+  );
+  const [clientWidth, setClientWidth] = useState(document.body.clientWidth);
+  const [clientHeight, setClientHeight] = useState(document.body.clientHeight);
+
+  const [isZoomed, setIsZoomed] = useState(preselectedProject ? true : false);
+
+  const [projectSlide, setProjectSlide] = useState(0);
+
+  const [currentProject, setCurrentProject] = useState(
+    typeof preselectedProject?.id === "number"
+      ? projectsArr.length - preselectedProject.id - 1
+      : 0
+  );
+
   const [isTransition, setIsTransition] = useState(true);
+
+  useEffect(() => {
+    if (isZoomed && currentProject) {
+      const project = projectsArr[projectsArr.length - slide];
+      navigate(`#${project.name.replaceAll(" ", "-").toLowerCase()}`);
+    }
+  }, [isZoomed, currentProject, navigate, slide]);
 
   const lButton = useRef(null);
   const rButton = useRef(null);
@@ -84,7 +109,7 @@ const GalleryPage = () => {
     } else {
       setIsTransition(true);
       setTimeout(() => {
-        navigate("/");
+        goToHome();
       }, 500);
     }
   };
@@ -198,6 +223,26 @@ const GalleryPage = () => {
                           ) {
                             setIsZoomed(!isZoomed);
                             setCurrentProject(projectsArr.length - el.id - 1);
+                          } else {
+                            if (typeof el.id === "number") {
+                              if (el.id > (slide % (arr.length + 1)) - 1) {
+                                setSlide(slide + 1);
+                                setTimeout(() => {
+                                  setIsZoomed(!isZoomed);
+                                  setCurrentProject(
+                                    projectsArr.length - (el.id ?? 0) - 1
+                                  );
+                                }, 200);
+                              } else {
+                                setSlide(slide - 1);
+                                setTimeout(() => {
+                                  setIsZoomed(!isZoomed);
+                                  setCurrentProject(
+                                    projectsArr.length - (el.id ?? 0) - 1
+                                  );
+                                }, 200);
+                              }
+                            }
                           }
                         }}
                         isZoomed={isZoomed}
@@ -271,20 +316,6 @@ const GalleryPage = () => {
       >
         <div />
       </button>
-      <button
-        className={styles["button"] + " " + styles["button-l"]}
-        ref={lButton}
-        onClick={leftButtonClick}
-      >
-        <div />
-      </button>
-      <button
-        className={styles["button"] + " " + styles["button-r"]}
-        ref={rButton}
-        onClick={rightButtonClick}
-      >
-        <div />
-      </button>
       <ParticlesComponent
         width={clientWidth}
         height={clientHeight}
@@ -314,7 +345,7 @@ const GalleryPage = () => {
           <SwiperSlide>
             <WelcomeTile />
           </SwiperSlide>
-          {Object.values(demos)
+          {Object.values(projectsForGallery)
             .flat()
             .map((el, id) => {
               el.id = id;

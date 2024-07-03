@@ -10,9 +10,9 @@ interface ProjectProps {
 
 const Project = ({ data, zoom, isZoomed }: ProjectProps) => {
   return (
-    <div className={styles['container']} onClick={zoom}>
+    <div className={styles["container"]}>
       <div
-        className={`button ${styles['side-placeholder']}`}
+        className={`button ${styles["side-placeholder"]}`}
         style={{
           opacity: isZoomed ? 0 : 1,
         }}
@@ -20,15 +20,16 @@ const Project = ({ data, zoom, isZoomed }: ProjectProps) => {
         <HoloFrame
           light
           style={{
-            width: '100%',
-            height: '100%',
-            padding: '5px',
-            textAlign: 'center',
-            overflow: 'hidden'
+            width: "100%",
+            height: "100%",
+            padding: "5px",
+            textAlign: "center",
+            overflow: "hidden",
           }}
+          onClick={zoom}
         >
-          <h4 className={styles['title']}>{data.name}</h4>
-          <img className={styles['img']} src={data.image} alt='img' />
+          <h4 className={styles["title"]}>{data.name}</h4>
+          <img className={styles["img"]} src={data.image} alt="img" />
         </HoloFrame>
       </div>
     </div>

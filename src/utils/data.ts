@@ -182,7 +182,7 @@ Run \`npm run start\` to start production ready project on [http://localhost:300
         "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/image_p92gw8.png",
     },
     {
-      name: "Dungeon cards AI",
+      name: "Dungeon cards",
       url: "https://blackpawsstudio.github.io/Dungeon-cards/",
       description: `## DUNGEON CARDS GAME
 
