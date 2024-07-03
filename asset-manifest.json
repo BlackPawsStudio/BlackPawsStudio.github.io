@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.362fa692.css",
+    "main.js": "/static/js/main.eb9e205c.js",
+    "static/media/Orbitron-Regular.ttf": "/static/media/Orbitron-Regular.23a1d6c3def1d738a011.ttf",
+    "index.html": "/index.html",
+    "main.362fa692.css.map": "/static/css/main.362fa692.css.map",
+    "main.eb9e205c.js.map": "/static/js/main.eb9e205c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.362fa692.css",
+    "static/js/main.eb9e205c.js"
+  ]
+}
