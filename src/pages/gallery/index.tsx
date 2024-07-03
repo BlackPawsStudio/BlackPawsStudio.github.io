@@ -60,14 +60,14 @@ const GalleryPage = ({
   const [isTransition, setIsTransition] = useState(true);
 
   useEffect(() => {
-    if (isZoomed && currentProject) {
-      console.log(slide, projectsArr)
-      const project = projectsArr[projectsArr.length - slide];
+    if (isZoomed && typeof currentProject === "number") {
+      const project = projectsArr[currentProject];
+      console.log(currentProject, projectsArr, project);
       if (project) {
         navigate(`#${project.name.replaceAll(" ", "-").toLowerCase()}`);
       }
     }
-  }, [isZoomed, currentProject, navigate, slide]);
+  }, [isZoomed, currentProject, navigate]);
 
   const lButton = useRef(null);
   const rButton = useRef(null);
