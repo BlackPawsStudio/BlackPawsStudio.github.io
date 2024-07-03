@@ -228,7 +228,13 @@ const GalleryPage = ({
                             setCurrentProject(projectsArr.length - el.id - 1);
                           } else {
                             if (typeof el.id === "number") {
-                              if (el.id > (slide % (arr.length + 1)) - 1) {
+                              if (
+                                el.id >
+                                (slide > 0
+                                  ? (slide % (arr.length + 1)) - 1
+                                  : arr.length -
+                                    (Math.abs(slide) % (arr.length + 1)))
+                              ) {
                                 setSlide(slide + 1);
                                 setTimeout(() => {
                                   setIsZoomed(!isZoomed);
