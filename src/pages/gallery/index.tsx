@@ -61,8 +61,11 @@ const GalleryPage = ({
 
   useEffect(() => {
     if (isZoomed && currentProject) {
+      console.log(slide, projectsArr)
       const project = projectsArr[projectsArr.length - slide];
-      navigate(`#${project.name.replaceAll(" ", "-").toLowerCase()}`);
+      if (project) {
+        navigate(`#${project.name.replaceAll(" ", "-").toLowerCase()}`);
+      }
     }
   }, [isZoomed, currentProject, navigate, slide]);
 
