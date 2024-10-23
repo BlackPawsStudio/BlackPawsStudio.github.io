@@ -13,6 +13,48 @@ export interface DemoType {
 export const demos: DemoSectionsType = {
   "Production projects": [
     {
+      name: "Langzy App",
+      url: "https://app.langzy.org/",
+      description: `## Langzy App
+
+> Language learning application with AI chat. Allows learning wide range of languages while communicating with specially configured chat bot.
+
+**Position:** Full-stack developer
+
+**Used Technologies:** React, Next.js, ShadCn, Tailwind, Clerk, Stripe, ChatGPT
+
+**My accomplishments:**
+
+- Created client side of the application.
+- Created onboarding flow, collecting data about the user.
+- Integrated stripe with subscriptions and one-time purchases system.
+- Implemented Clerk for Authentication with Google, Facebook or Email.
+`,
+      image:
+        "https://res-console.cloudinary.com/dxyapxi2t/thumbnails/v1/image/upload/v1729677116/U2NyZWVuc2hvdF8yMDI0LTEwLTIzX2F0XzEyLjUxLjQxX3B1bHZmZg",
+    },
+    {
+      name: "OmniStack platform",
+      url: "https://frontend-rho-tan.vercel.app/",
+      description: `## OmniStack
+
+> Crypto platform admin panel
+
+**Position:** Full-stack developer
+
+**Used Technologies:** React, Next.js, ShadCn, Tailwind, Clerk
+
+**My accomplishments:**
+
+- Created whole application layout and server part.
+- Created multiple components to build the application faster and easier.
+- Integrated complex API from the client.
+- Created custom Clerk authorization pages and flow.
+`,
+      image:
+        "https://res-console.cloudinary.com/dxyapxi2t/thumbnails/v1/image/upload/v1729675957/U2NyZWVuc2hvdF8yMDI0LTEwLTIzX2F0XzEyLjMyLjI0X3JhbHpkYg==/as_is",
+    },
+    {
       name: "Athletic Greens AG1",
       url: "https://drinkag1.com/",
       description: `## Athletic Greens AG1
