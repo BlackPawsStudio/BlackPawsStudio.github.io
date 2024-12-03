@@ -1,14 +1,32 @@
 {
   "files": {
     "main.css": "/static/css/main.362fa692.css",
-    "main.js": "/static/js/main.b7e9fdde.js",
+    "main.js": "/static/js/main.6c153f1c.js",
+    "static/media/online-zoo.png": "/static/media/online-zoo.94b7d1a49cc4f51ec664.png",
+    "static/media/wildlife.png": "/static/media/wildlife.b49fd149acddba1c6853.png",
+    "static/media/cv.png": "/static/media/cv.8926669806cc96ab21f7.png",
+    "static/media/photo-filter.png": "/static/media/photo-filter.8f53cca54e730dd94e1b.png",
+    "static/media/starly.png": "/static/media/starly.2a02f28c71874424b2fc.png",
+    "static/media/drinkag1.png": "/static/media/drinkag1.12642be471ffd56a5ace.png",
+    "static/media/omnistack.png": "/static/media/omnistack.42be38dccd734f2ef434.png",
+    "static/media/tend.png": "/static/media/tend.988f9227c0ff10046d50.png",
+    "static/media/match-match.png": "/static/media/match-match.9e61b12b4744436c13d5.png",
+    "static/media/roaries.png": "/static/media/roaries.87075720d9cba97db7ac.png",
+    "static/media/i2go.png": "/static/media/i2go.c200a3ea1860e0818427.png",
+    "static/media/langzy.png": "/static/media/langzy.364d90fe877d3acc6f21.png",
+    "static/media/explore-locations.png": "/static/media/explore-locations.d75422bbcda52806cf0a.png",
+    "static/media/dominoes.png": "/static/media/dominoes.e06c4d8637c2ca64c058.png",
+    "static/media/next-notes.png": "/static/media/next-notes.c95c0a56a025f6328bca.png",
+    "static/media/virtual-piano.png": "/static/media/virtual-piano.aad82b8af865406c2ef9.png",
+    "static/media/a-life.png": "/static/media/a-life.073cdd7d1dc42597f36f.png",
+    "static/media/dungeon-cards.png": "/static/media/dungeon-cards.581ab4ec8d767e3a078e.png",
     "static/media/Orbitron-Regular.ttf": "/static/media/Orbitron-Regular.23a1d6c3def1d738a011.ttf",
     "index.html": "/index.html",
     "main.362fa692.css.map": "/static/css/main.362fa692.css.map",
-    "main.b7e9fdde.js.map": "/static/js/main.b7e9fdde.js.map"
+    "main.6c153f1c.js.map": "/static/js/main.6c153f1c.js.map"
   },
   "entrypoints": [
     "static/css/main.362fa692.css",
-    "static/js/main.b7e9fdde.js"
+    "static/js/main.6c153f1c.js"
   ]
 }
