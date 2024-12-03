@@ -1,5 +1,6 @@
 import HoloFrame from "../../HologramFrame";
 import styles from "./index.module.css";
+import Gallery from "../../../projects/cv.png";
 
 interface ProjectsGalleryProps {
   openGallery: () => void;
@@ -22,9 +23,7 @@ const ProjectsGallery = ({ openGallery }: ProjectsGalleryProps) => {
       >
         <img
           className={styles["image"]}
-          src={
-            "https://res.cloudinary.com/dxyapxi2t/image/upload/v1698396341/Screenshot_2023-10-27_at_11.45.24_sikuhl.png"
-          }
+          src={Gallery}
           width={400}
           height={400}
           alt=""

@@ -1,3 +1,22 @@
+import Langzy from "../projects/langzy.png";
+import Omnistack from "../projects/omnistack.png";
+import DrinkAG1 from "../projects/drinkag1.png";
+import BeInfinity from "../projects/i2go.png";
+import ExploreLocations from "../projects/explore-locations.png";
+import Roaries from "../projects/roaries.png";
+import Starly from "../projects/starly.png";
+import MyTend from "../projects/tend.png";
+import NextNotes from "../projects/next-notes.png";
+import DungeonCards from "../projects/dungeon-cards.png";
+import Dominoes from "../projects/dominoes.png";
+// import AStar from "../projects/a-star.png";
+import ALife from "../projects/a-life.png";
+import Wildlife from "../projects/wildlife.png";
+import VirtualPiano from "../projects/virtual-piano.png";
+import OnlineZoo from "../projects/online-zoo.png";
+import PhotoFilter from "../projects/photo-filter.png";
+import MatchMatch from "../projects/match-match.png";
+
 export interface DemoSectionsType {
   [key: string]: DemoType[];
 }
@@ -12,6 +31,26 @@ export interface DemoType {
 
 export const demos: DemoSectionsType = {
   "Production projects": [
+    {
+      name: "OmniStack platform",
+      url: "https://console.omnistack.sh/",
+      description: `## OmniStack
+
+> Crypto platform admin panel
+
+**Position:** Full-stack developer
+
+**Used Technologies:** React, Next.js, ShadCn, Tailwind, Clerk
+
+**My accomplishments:**
+
+- Created whole application layout and server part.
+- Created multiple components to build the application faster and easier.
+- Integrated complex API from the client.
+- Created custom Clerk authorization pages and flow.
+`,
+      image: Omnistack,
+    },
     {
       name: "Langzy App",
       url: "https://app.langzy.org/",
@@ -30,29 +69,7 @@ export const demos: DemoSectionsType = {
 - Integrated stripe with subscriptions and one-time purchases system.
 - Implemented Clerk for Authentication with Google, Facebook or Email.
 `,
-      image:
-        "https://res-console.cloudinary.com/dxyapxi2t/thumbnails/v1/image/upload/v1729677116/U2NyZWVuc2hvdF8yMDI0LTEwLTIzX2F0XzEyLjUxLjQxX3B1bHZmZg",
-    },
-    {
-      name: "OmniStack platform",
-      url: "https://frontend-rho-tan.vercel.app/",
-      description: `## OmniStack
-
-> Crypto platform admin panel
-
-**Position:** Full-stack developer
-
-**Used Technologies:** React, Next.js, ShadCn, Tailwind, Clerk
-
-**My accomplishments:**
-
-- Created whole application layout and server part.
-- Created multiple components to build the application faster and easier.
-- Integrated complex API from the client.
-- Created custom Clerk authorization pages and flow.
-`,
-      image:
-        "https://res-console.cloudinary.com/dxyapxi2t/thumbnails/v1/image/upload/v1729675957/U2NyZWVuc2hvdF8yMDI0LTEwLTIzX2F0XzEyLjMyLjI0X3JhbHpkYg==/as_is",
+      image: Langzy,
     },
     {
       name: "Athletic Greens AG1",
@@ -72,8 +89,7 @@ export const demos: DemoSectionsType = {
 - Implemented various systems in different parts of the app.
 - Huge number of created Storybooks and tests for components.
 `,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1715092419/Untitled_qv9by4.png",
+      image: DrinkAG1,
     },
     {
       name: "Infinity2Go",
@@ -93,8 +109,7 @@ export const demos: DemoSectionsType = {
 - Implemented smart filters for the admin app.
 - Provided development support for AWS Lambdas on the backend.
     `,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1698398944/Untitled_1_tzktd6.png",
+      image: BeInfinity,
     },
     {
       name: "ExploreLocations",
@@ -113,8 +128,7 @@ export const demos: DemoSectionsType = {
 - Create Leaflet Maps using Stadia Maps API and add application data on them
 - Building MVP application from scratch
       `,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1698395656/Untitled_zeqeob.jpg?_s=public-apps",
+      image: ExploreLocations,
     },
     {
       name: "Roaries",
@@ -133,8 +147,7 @@ export const demos: DemoSectionsType = {
 - Developed functionality and fixed styles for multiple components and pages
 - Developed complex video block for the main page
       `,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/Untitled_v4igae.png",
+      image: Roaries,
     },
     {
       name: "Starly",
@@ -151,8 +164,7 @@ export const demos: DemoSectionsType = {
 
 - Developed reusable components using a styled-components library and pixel-perfect mobile/desktop page layouts.
 - Firebase/Redux/Redux-Saga component/pages integration.`,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671724774/Screenshot_2022-12-21_151001_x6kpvu.png",
+      image: Starly,
     },
     {
       name: "MyTend.com",
@@ -170,8 +182,7 @@ export const demos: DemoSectionsType = {
 - Create claims and transactions tables in user portal;
 - Implement new widget design;
 - Complex visual components.`,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785718/Screenshot_2022-05-05_154947_snb5e8.png",
+      image: MyTend,
     },
   ],
   "My pet projects": [
@@ -220,8 +231,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Run \`npm run build\` to build the project. The build files will be stored in the \`.next/\` directory. 
 Run \`npm run start\` to start production ready project on [http://localhost:3000](http://localhost:3000).`,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/image_p92gw8.png",
+      image: NextNotes,
     },
     {
       name: "Dungeon cards",
@@ -263,8 +273,7 @@ To run the project write \`npm run\` in terminal and live development server wil
 
 Run \`npm run build\` to build the project. The build files will be stored in the \`dist/\` directory. 
 You can go to the \`dist/\` directory and open \`index.html\` file to see the results.`,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785716/Screenshot_2022-01-12_131042_sdlhqz.png",
+      image: DungeonCards,
     },
     {
       name: "Auto Dominoes",
@@ -325,19 +334,17 @@ To run the project write \`npm run start\` in terminal and live development serv
 
 Run \`npm run build\` to build the project. The build files will be stored in the \`build/\` directory. 
 You can go to the \`build/\` directory and open index.html file to see the results.`,
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1671785717/image_1_yyam8h.png",
+      image: Dominoes,
     },
     {
       name: "A-life",
       url: "https://blackpawsstudio.github.io/A-life",
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1673678464/Screenshot_2023-01-14_094036_eutzkd.png",
+      image: ALife,
       description: `## A Life
 
 This is an application that is simulating artificial cell life based on the attraction and repulsion between dots.
 
-![image](https://res.cloudinary.com/dxyapxi2t/image/upload/v1673678464/Screenshot_2023-01-14_094036_eutzkd.png)
+![image](a-life.png)
 
 #### How to play
 
@@ -372,36 +379,31 @@ You also can pause and continue the simulation.`,
       name: "Wildlife",
       url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/wildlife/",
       description: "",
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322629/Screenshot_2024-06-02_at_12.52.58_o38tpb.png",
+      image: Wildlife,
     },
     {
       name: "Virtual piano",
       url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/virtual-piano/",
       description: "",
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322628/Screenshot_2024-06-02_at_12.53.42_btesjx.png",
+      image: VirtualPiano,
     },
     {
       name: "Online zoo",
       url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/online-zoo/",
       description: "",
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322631/Screenshot_2024-06-02_at_12.54.37_immd1c.png",
+      image: OnlineZoo,
     },
     {
       name: "Photo filter",
       url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/photo-filter/",
       description: "",
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322629/Screenshot_2024-06-02_at_12.54.50_ws4zkz.png",
+      image: PhotoFilter,
     },
     {
       name: "Match-match game",
       url: "https://rolling-scopes-school.github.io/blackpawsstudio-JSFE2021Q1/match-match%20game/",
       description: "",
-      image:
-        "https://res.cloudinary.com/dxyapxi2t/image/upload/v1717322629/Screenshot_2024-06-02_at_12.55.14_jx8s5b.png",
+      image: MatchMatch,
     },
   ],
 };
