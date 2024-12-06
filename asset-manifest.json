@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.362fa692.css",
-    "main.js": "/static/js/main.6c153f1c.js",
+    "main.js": "/static/js/main.74969553.js",
     "static/media/online-zoo.png": "/static/media/online-zoo.94b7d1a49cc4f51ec664.png",
     "static/media/wildlife.png": "/static/media/wildlife.b49fd149acddba1c6853.png",
     "static/media/cv.png": "/static/media/cv.8926669806cc96ab21f7.png",
@@ -23,10 +23,10 @@
     "static/media/Orbitron-Regular.ttf": "/static/media/Orbitron-Regular.23a1d6c3def1d738a011.ttf",
     "index.html": "/index.html",
     "main.362fa692.css.map": "/static/css/main.362fa692.css.map",
-    "main.6c153f1c.js.map": "/static/js/main.6c153f1c.js.map"
+    "main.74969553.js.map": "/static/js/main.74969553.js.map"
   },
   "entrypoints": [
     "static/css/main.362fa692.css",
-    "static/js/main.6c153f1c.js"
+    "static/js/main.74969553.js"
   ]
 }
