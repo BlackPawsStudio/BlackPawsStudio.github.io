@@ -113,7 +113,7 @@ export const demos: DemoSectionsType = {
     },
     {
       name: "ExploreLocations",
-      url: "https://explorelocations.com/",
+      url: "https://explore-locations.vercel.app/",
       description: `## ExploreLocations
 
 > The platform that we are building helps users discover various points of interest across the world on the up-to-date map
