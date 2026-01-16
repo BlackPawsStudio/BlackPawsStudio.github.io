@@ -1,5 +1,5 @@
 .container {
-  transform: rotateY(180deg);
+  transform: rotateY(0deg); /* Always use mobile rotation */
   text-align: center;
   height: 100%;
   width: 100%;
@@ -16,8 +16,4 @@
   margin-top: 60px;
 }
 
-@media (max-width: 1100px) {
-  .container {
-    transform: rotateY(0deg);
-  }
-}
+/* Media query no longer needed since we always use mobile UI */

@@ -13,7 +13,7 @@ import { Navigation } from "swiper";
 import ReactHotkeys from "react-hot-keys";
 import { useNavigate } from "react-router-dom";
 
-const isDesktop = document.body.clientWidth > 1100;
+const isDesktop = false; // Force mobile UI on all devices
 
 interface HomePageProps {
   setStep: () => void;

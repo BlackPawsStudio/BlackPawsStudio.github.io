@@ -1,5 +1,5 @@
 .container {
-  transform: rotateY(180deg);
+  transform: rotateY(0deg); /* Always use mobile rotation */
   text-align: center;
   height: 100%;
   width: 100%;
@@ -81,7 +81,5 @@
     font-size: 24px;
   }
 
-  .container {
-    transform: rotateY(0deg);
-  }
+  /* Container rotation now handled globally */
 }

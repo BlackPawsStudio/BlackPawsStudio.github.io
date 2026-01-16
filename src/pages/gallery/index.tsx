@@ -24,7 +24,7 @@ const projectsArr = Object.values(projectsForGallery)
   })
   .reverse();
 
-const isDesktop = document.body.clientWidth > 1100;
+const isDesktop = false; // Force mobile UI on all devices
 
 interface GalleryPageProps {
   goToHome: () => void;
